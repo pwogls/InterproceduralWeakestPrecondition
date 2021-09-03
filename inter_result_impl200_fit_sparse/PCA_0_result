@@ -1,0 +1,50 @@
+>>> PCA  ( transformer )
+10 trials: 0 passed, 10 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(4/4) |       0        |        0        |       10       |        0        |    INF    |  INF   |
+| docstrings_(0/0)  |       0        |       10        |       0        |        0        |    0.0    |  INF   |
+| WPanalysis_(3/23) |       0        |        0        |       10       |        0        |    INF    |  INF   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 23 total, 3 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['copy', 'iterated_power', 'n_components', 'svd_solver', 'tol', 'whiten', 'random_state']
+
+> relevantToOptimizer:
+ ['copy', 'iterated_power', 'n_components', 'svd_solver', 'tol', 'whiten']
+
+> handwritten
+False Positives (0):
+True Negatives (10):
+	(10) PCA does not support sparse input. See TruncatedSVD for a possible alternative.
+
+> docstring
+False Positives (10):
+	(10) PCA does not support sparse input. See TruncatedSVD for a possible alternative.
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (10):
+	(10) PCA does not support sparse input. See TruncatedSVD for a possible alternative.
+
+> Failed constraints stats:
+handwritten:
+freq = 10
+{'description': 'This class does not support sparse input. See TruncatedSVD for an alternative with sparse data.',
+ 'type': 'object',
+ 'not': {}}
+
+docstring:
+
+WPanalysis:
+freq = 10
+{'description': "From /utils/validation.py:None:_ensure_sparse_format, Exception: raise TypeError(     'A sparse "
+                'matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy '
+                "array.'     ) ",
+ 'type': 'object',
+ 'not': {}}

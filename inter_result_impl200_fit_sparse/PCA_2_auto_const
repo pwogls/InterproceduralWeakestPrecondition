@@ -1,0 +1,56 @@
+{'allOf': [{'description': 'This first object lists all constructor arguments with their types, but omits constraints '
+                           'for conditional hyperparameters.\n',
+            'type': 'object',
+            'additionalProperties': False,
+            'required': ['n_components', 'copy', 'whiten', 'svd_solver', 'tol', 'iterated_power', 'random_state'],
+            'relevantToOptimizer': ['copy', 'iterated_power', 'n_components', 'svd_solver', 'tol', 'whiten'],
+            'properties': {'n_components': {'anyOf': [{'description': 'If not set, keep all components.',
+                                                       'enum': [None]},
+                                                      {'description': "Use Minka's MLE to guess the dimension.",
+                                                       'enum': ['mle']},
+                                                      {'description': 'Select the number of components such that the '
+                                                                      'amount of variance that needs to be explained '
+                                                                      'is greater than the specified percentage.',
+                                                       'type': 'number',
+                                                       'minimum': 0.0,
+                                                       'exclusiveMinimum': True,
+                                                       'maximum': 1.0,
+                                                       'exclusiveMaximum': True},
+                                                      {'description': 'Number of components to keep.',
+                                                       'type': 'integer',
+                                                       'minimum': 1,
+                                                       'laleMaximum': 'X/items/maxItems',
+                                                       'forOptimizer': False}],
+                                            'default': None},
+                           'copy': {'description': 'If false, overwrite data passed to fit.',
+                                    'type': 'boolean',
+                                    'default': True},
+                           'whiten': {'description': 'When true, multiply the components vectors by the square root '
+                                                     'of\n'
+                                                     'n_samples and then divide by the singular values to ensure '
+                                                     'uncorrelated\n'
+                                                     'outputs with unit component-wise variances.',
+                                      'type': 'boolean',
+                                      'default': False},
+                           'svd_solver': {'description': 'Algorithm to use.',
+                                          'enum': ['auto', 'full', 'arpack', 'randomized'],
+                                          'default': 'auto'},
+                           'tol': {'description': 'Tolerance for singular values computed by svd_solver arpack.',
+                                   'type': 'number',
+                                   'minimum': 0.0,
+                                   'maximumForOptimizer': 1,
+                                   'default': 0.0},
+                           'iterated_power': {'anyOf': [{'description': 'Number of iterations for the power method '
+                                                                        'computed by svd_solver randomized.',
+                                                         'type': 'integer',
+                                                         'minimum': 0,
+                                                         'maximumForOptimizer': 10},
+                                                        {'description': 'Pick automatically.', 'enum': ['auto']}],
+                                              'default': 'auto'},
+                           'random_state': {'description': 'Seed of pseudo-random number generator for shuffling data.',
+                                            'anyOf': [{'description': 'RandomState used by np.random', 'enum': [None]},
+                                                      {'description': 'Use the provided random state, only affecting '
+                                                                      'other users of that same random state instance.',
+                                                       'laleType': 'numpy.random.RandomState'},
+                                                      {'description': 'Explicit seed.', 'type': 'integer'}],
+                                            'default': None}}}]}

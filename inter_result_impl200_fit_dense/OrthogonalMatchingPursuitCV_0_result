@@ -1,0 +1,47 @@
+>>> OrthogonalMatchingPursuitCV  ( regression )
+1000 trials: 535 passed, 465 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/1)  |      535       |       465       |       0        |        0        |   0.535   |  1.0   |
+| WPanalysis_(5/48) |      535       |       465       |       0        |        0        |   0.535   |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 48 total, 5 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['copy', 'cv', 'fit_intercept', 'max_iter', 'normalize', 'n_jobs', 'verbose']
+
+> relevantToOptimizer:
+ ['copy', 'fit_intercept', 'normalize', 'max_iter', 'cv']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (465):
+	(465) The number of atoms cannot be more than the number of features
+True Negatives (0):
+
+> WPanalysis
+False Positives (465):
+	(465) The number of atoms cannot be more than the number of features
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'copy': 0, 'cv': 0, 'fit_intercept': 0, 'max_iter': 0, 'normalize': 0, 'n_jobs': 0, 'verbose': 0}
+docstring: 
+ {'copy': 0, 'cv': 0, 'fit_intercept': 0, 'max_iter': 0, 'normalize': 0, 'n_jobs': 0, 'verbose': 0}
+WPanalysis: 
+ {'copy': 0, 'cv': 0, 'fit_intercept': 0, 'max_iter': 0, 'normalize': 0, 'n_jobs': 0, 'verbose': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

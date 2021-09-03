@@ -1,0 +1,18 @@
+[783,
+ 217,
+ ['handwritten_(0/0)', 783, 217, 0, 0, 0.783, 1.0],
+ ['docstrings', '-', '-', '-', '-', '-', '-'],
+ ['WPanalysis_(3/21)', 783, 0, 217, 0, 1.0, 1.0],
+ ['strategy', 'random_state', 'constant'],
+ {'strategy': 0, 'random_state': 0, 'constant': 0},
+ {'strategy': 0, 'random_state': 0, 'constant': 0},
+ {'strategy': 0, 'random_state': 0, 'constant': 0},
+ [],
+ {},
+ [],
+ {},
+ [{'description': "From /dummy.py:DummyClassifier:fit, Exception: raise ValueError(     'Constant target value has to "
+                  "be specified when the constant strategy is used.'     ) ",
+   'anyOf': [{'type': 'object', 'properties': {'strategy': {'not': {'enum': ['constant']}}}},
+             {'type': 'object', 'properties': {'constant': {'not': {'enum': [None]}}}}]}],
+ {'0': 217}]

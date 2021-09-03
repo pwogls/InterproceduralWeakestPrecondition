@@ -1,0 +1,51 @@
+{'allOf': [{'type': 'object',
+            'required': ['base_estimator', 'method', 'cv'],
+            'relevantToOptimizer': ['method', 'cv', 'ensemble'],
+            'additionalProperties': False,
+            'properties': {'base_estimator': {'XXX TODO XXX': 'instance BaseEstimator',
+                                              'description': 'The classifier whose output decision function needs to '
+                                                             'be calibrated to offer more accurate predict_proba '
+                                                             'outputs',
+                                              'laleType': 'operator',
+                                              'default': None},
+                           'method': {'XXX TODO XXX': "'sigmoid' or 'isotonic'",
+                                      'description': 'The method to use for calibration',
+                                      'enum': ['sigmoid', 'isotonic'],
+                                      'default': 'sigmoid'},
+                           'cv': {'description': 'Cross-validation as integer or as object that has a split function.\n'
+                                                 '                        The fit method performs cross validation on '
+                                                 'the input dataset for per\n'
+                                                 '                        trial, and uses the mean cross validation '
+                                                 'performance for optimization.\n'
+                                                 '                        This behavior is also impacted by '
+                                                 'handle_cv_failure flag.\n'
+                                                 '                        If integer: number of folds in '
+                                                 'sklearn.model_selection.StratifiedKFold.\n'
+                                                 '                        If object with split function: generator '
+                                                 'yielding (train, test) splits\n'
+                                                 '                        as arrays of indices. Can use any of the '
+                                                 'iterators from\n'
+                                                 '                        '
+                                                 'https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators.',
+                                  'anyOf': [{'type': 'integer',
+                                             'minimum': 1,
+                                             'default': 5,
+                                             'minimumForOptimizer': 3,
+                                             'maximumForOptimizer': 4,
+                                             'distribution': 'uniform'},
+                                            {'laleType': 'Any', 'forOptimizer': False},
+                                            {'enum': [None]},
+                                            {'enum': ['prefit']}],
+                                  'default': None},
+                           'n_jobs': {'description': 'Number of jobs to run in parallel.',
+                                      'anyOf': [{'description': '1 unless in joblib.parallel_backend context.',
+                                                 'enum': [None]},
+                                                {'description': 'Use all processors.', 'enum': [-1]},
+                                                {'description': 'Number of jobs to run in parallel.',
+                                                 'type': 'integer',
+                                                 'minimum': 1}],
+                                      'default': None},
+                           'ensemble': {'type': 'boolean',
+                                        'default': True,
+                                        'description': 'Determines how the calibrator is fitted when cv is not '
+                                                       "'prefit'. Ignored if cv='prefit"}}}]}

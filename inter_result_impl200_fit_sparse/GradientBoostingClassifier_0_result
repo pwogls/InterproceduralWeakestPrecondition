@@ -1,0 +1,70 @@
+>>> GradientBoostingClassifier  ( classifier )
+1000 trials: 481 passed, 519 failed.
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0)  |      481       |       519       |       0        |        0        |   0.481   |  1.0   |
+|  docstrings_(0/2)  |      481       |       519       |       0        |        0        |   0.481   |  1.0   |
+| WPanalysis_(8/130) |      481       |       519       |       0        |        0        |   0.481   |  1.0   |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 130 total, 8 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['criterion', 'learning_rate', 'loss', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'n_estimators', 'n_iter_no_change', 'subsample', 'tol', 'validation_fraction', 'warm_start', 'min_impurity_split', 'init', 'random_state', 'verbose', 'ccp_alpha']
+
+> relevantToOptimizer:
+ ['criterion', 'learning_rate', 'loss', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'n_estimators', 'n_iter_no_change', 'subsample', 'tol', 'validation_fraction', 'warm_start']
+
+> handwritten
+False Positives (519):
+	(506) ExponentialLoss requires 2 classes; got 10 class(es)
+	(3) The train_size = 3 should be greater or equal to the number of classes = 10
+	(2) The train_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 6 should be greater or equal to the number of classes = 10
+	(1) The test_size = 9 should be greater or equal to the number of classes = 10
+	(1) The train_size = 6 should be greater or equal to the number of classes = 10
+	(1) The test_size = 8 should be greater or equal to the number of classes = 10
+	(1) The train_size = 7 should be greater or equal to the number of classes = 10
+	(1) The train_size = 2 should be greater or equal to the number of classes = 10
+	(1) The test_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 7 should be greater or equal to the number of classes = 10
+True Negatives (0):
+
+> docstring
+False Positives (519):
+	(506) ExponentialLoss requires 2 classes; got 10 class(es)
+	(3) The train_size = 3 should be greater or equal to the number of classes = 10
+	(2) The train_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 6 should be greater or equal to the number of classes = 10
+	(1) The test_size = 9 should be greater or equal to the number of classes = 10
+	(1) The train_size = 6 should be greater or equal to the number of classes = 10
+	(1) The test_size = 8 should be greater or equal to the number of classes = 10
+	(1) The train_size = 7 should be greater or equal to the number of classes = 10
+	(1) The train_size = 2 should be greater or equal to the number of classes = 10
+	(1) The test_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 7 should be greater or equal to the number of classes = 10
+True Negatives (0):
+
+> WPanalysis
+False Positives (519):
+	(506) ExponentialLoss requires 2 classes; got 10 class(es)
+	(3) The train_size = 3 should be greater or equal to the number of classes = 10
+	(2) The train_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 6 should be greater or equal to the number of classes = 10
+	(1) The test_size = 9 should be greater or equal to the number of classes = 10
+	(1) The train_size = 6 should be greater or equal to the number of classes = 10
+	(1) The test_size = 8 should be greater or equal to the number of classes = 10
+	(1) The train_size = 7 should be greater or equal to the number of classes = 10
+	(1) The train_size = 2 should be greater or equal to the number of classes = 10
+	(1) The test_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 7 should be greater or equal to the number of classes = 10
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

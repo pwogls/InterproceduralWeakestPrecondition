@@ -1,0 +1,57 @@
+>>> LinearSVR  ( regression )
+1000 trials: 367 passed, 633 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0) |      367       |       633       |       0        |        0        |   0.367   |  1.0   |
+| docstrings_(0/0)  |      367       |       633       |       0        |        0        |   0.367   |  1.0   |
+| WPanalysis_(6/55) |      367       |       367       |      266       |        0        |    0.5    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 55 total, 6 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['dual', 'epsilon', 'fit_intercept', 'loss', 'max_iter', 'tol', 'C', 'intercept_scaling', 'verbose', 'random_state']
+
+> relevantToOptimizer:
+ ['epsilon', 'tol', 'loss', 'fit_intercept', 'dual', 'max_iter']
+
+> handwritten
+False Positives (633):
+	(367) dimension mismatch
+	(140) Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+	(126) Unsupported set of arguments: The combination of penalty='l2' and loss='epsilon_insensitive' are not supported when dual=False, Parameters: penalty='l2', loss='epsilon_insensitive', dual=False
+True Negatives (0):
+
+> docstring
+False Positives (633):
+	(367) dimension mismatch
+	(140) Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+	(126) Unsupported set of arguments: The combination of penalty='l2' and loss='epsilon_insensitive' are not supported when dual=False, Parameters: penalty='l2', loss='epsilon_insensitive', dual=False
+True Negatives (0):
+
+> WPanalysis
+False Positives (367):
+	(367) dimension mismatch
+True Negatives (266):
+	(140) Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+	(126) Unsupported set of arguments: The combination of penalty='l2' and loss='epsilon_insensitive' are not supported when dual=False, Parameters: penalty='l2', loss='epsilon_insensitive', dual=False
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:
+freq = 266
+{'description': "From /svm/_base.py:None:_get_liblinear_solver_type, Exception: raise ValueError(     'Unsupported set "
+                "of arguments: %s, Parameters: penalty=%r, loss=%r, dual=%r'      % (error_string, penalty, loss, "
+                'dual)) ',
+ 'anyOf': [{'type': 'object', 'properties': {'loss': {'enum': ['logistic_regression']}}},
+           {'allOf': [{'type': 'object', 'properties': {'loss': {'enum': ['hinge']}}},
+                      {'type': 'object', 'properties': {'dual': {'enum': [True]}}}]},
+           {'type': 'object', 'properties': {'loss': {'enum': ['squared_hinge']}}},
+           {'allOf': [{'type': 'object', 'properties': {'loss': {'enum': ['epsilon_insensitive']}}},
+                      {'type': 'object', 'properties': {'dual': {'enum': [True]}}}]},
+           {'type': 'object', 'properties': {'loss': {'enum': ['squared_epsilon_insensitive']}}}]}

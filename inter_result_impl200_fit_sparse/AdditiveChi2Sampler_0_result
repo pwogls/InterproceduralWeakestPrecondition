@@ -1,0 +1,46 @@
+>>> AdditiveChi2Sampler  ( transformer )
+1000 trials: 826 passed, 174 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/0)  |      826       |       174       |       0        |        0        |   0.826   |  1.0   |
+| WPanalysis_(1/11) |      826       |        0        |      174       |        0        |    1.0    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 11 total, 1 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['sample_interval', 'sample_steps']
+
+> relevantToOptimizer:
+ ['sample_steps', 'sample_interval']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (174):
+	(174) If sample_steps is not in [1, 2, 3], you need to provide sample_interval
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (174):
+	(174) If sample_steps is not in [1, 2, 3], you need to provide sample_interval
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:
+freq = 174
+{'description': "From /kernel_approximation.py:AdditiveChi2Sampler:fit, Exception: raise ValueError(     'If "
+                "sample_steps is not in [1, 2, 3], you need to provide sample_interval') ",
+ 'anyOf': [{'type': 'object', 'properties': {'sample_interval': {'not': {'enum': [None]}}}},
+           {'type': 'object', 'properties': {'sample_steps': {'enum': [1]}}},
+           {'type': 'object', 'properties': {'sample_steps': {'enum': [2]}}},
+           {'type': 'object', 'properties': {'sample_steps': {'enum': [3]}}}]}

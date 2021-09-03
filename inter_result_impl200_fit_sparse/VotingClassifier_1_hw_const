@@ -1,0 +1,32 @@
+{'description': 'Soft Voting/Majority Rule classifier for unfitted estimators.',
+ 'allOf': [{'type': 'object',
+            'required': ['estimators', 'voting', 'weights', 'n_jobs', 'flatten_transform'],
+            'relevantToOptimizer': ['voting'],
+            'additionalProperties': False,
+            'properties': {'estimators': {'type': 'array',
+                                          'items': {'type': 'array',
+                                                    'laleType': 'tuple',
+                                                    'items': [{'type': 'string'},
+                                                              {'anyOf': [{'laleType': 'operator'},
+                                                                         {'enum': ['drop']}]}]},
+                                          'description': 'List of (string, estimator) tuples. Invoking the ``fit`` '
+                                                         'method on the ``VotingClassifier`` will fit clones.'},
+                           'voting': {'enum': ['hard', 'soft'],
+                                      'default': 'hard',
+                                      'description': "If 'hard', uses predicted class labels for majority rule "
+                                                     'voting.'},
+                           'weights': {'anyOf': [{'type': 'array', 'items': {'type': 'number'}}, {'enum': [None]}],
+                                       'default': None,
+                                       'description': 'Sequence of weights (`float` or `int`) to weight the '
+                                                      'occurrences of'},
+                           'n_jobs': {'anyOf': [{'type': 'integer'}, {'enum': [None]}],
+                                      'default': None,
+                                      'description': 'The number of jobs to run in parallel for ``fit``.'},
+                           'flatten_transform': {'type': 'boolean',
+                                                 'default': True,
+                                                 'description': 'Affects shape of transform output only when '
+                                                                "voting='soft'"}}},
+           {'description': "Parameter: flatten_transform > only when voting='soft' if voting='soft' and "
+                           'flatten_transform=true',
+            'anyOf': [{'type': 'object', 'properties': {'voting': {'enum': ['soft']}}},
+                      {'type': 'object', 'properties': {'flatten_transform': {'enum': [True]}}}]}]}

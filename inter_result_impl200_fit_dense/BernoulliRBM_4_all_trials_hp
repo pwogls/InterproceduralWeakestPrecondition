@@ -1,0 +1,10 @@
+[{'batch_size': 12, 'n_components': 213, 'n_iter': 457, 'learning_rate': 0.1, 'verbose': 0, 'random_state': 33},
+ {'batch_size': 120, 'n_components': 187, 'n_iter': 413, 'learning_rate': 0.1, 'verbose': 0, 'random_state': 33},
+ {'batch_size': 41, 'n_components': 226, 'n_iter': 838, 'learning_rate': 0.1, 'verbose': 0, 'random_state': 33},
+ {'batch_size': 16, 'n_components': 235, 'n_iter': 448, 'learning_rate': 0.1, 'verbose': 0, 'random_state': 33},
+ {'batch_size': 78, 'n_components': 46, 'n_iter': 813, 'learning_rate': 0.1, 'verbose': 0, 'random_state': 33},
+ {'batch_size': 69, 'n_components': 113, 'n_iter': 801, 'learning_rate': 0.1, 'verbose': 0, 'random_state': 33},
+ {'batch_size': 23, 'n_components': 241, 'n_iter': 735, 'learning_rate': 0.1, 'verbose': 0, 'random_state': 33},
+ {'batch_size': 48, 'n_components': 199, 'n_iter': 619, 'learning_rate': 0.1, 'verbose': 0, 'random_state': 33},
+ {'batch_size': 65, 'n_components': 236, 'n_iter': 546, 'learning_rate': 0.1, 'verbose': 0, 'random_state': 33},
+ {'batch_size': 112, 'n_components': 180, 'n_iter': 956, 'learning_rate': 0.1, 'verbose': 0, 'random_state': 33}]

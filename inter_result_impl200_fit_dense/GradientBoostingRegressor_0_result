@@ -1,0 +1,79 @@
+>>> GradientBoostingRegressor  ( regression )
+1000 trials: 989 passed, 11 failed.
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------------------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives |     precision      |       recall       |
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------------------+
+| handwritten_(0/0)  |      989       |       11        |       0        |        0        |       0.989        |        1.0         |
+|  docstrings_(1/3)  |      514       |        7        |       4        |       475       | 0.9865642994241842 | 0.5197168857431749 |
+| WPanalysis_(8/116) |      989       |       11        |       0        |        0        |       0.989        |        1.0         |
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------------------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 116 total, 8 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['alpha', 'criterion', 'learning_rate', 'loss', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'n_estimators', 'n_iter_no_change', 'subsample', 'tol', 'validation_fraction', 'warm_start', 'min_impurity_split', 'init', 'random_state', 'verbose', 'ccp_alpha']
+
+> relevantToOptimizer:
+ ['alpha', 'criterion', 'learning_rate', 'loss', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'n_estimators', 'n_iter_no_change', 'subsample', 'tol', 'validation_fraction', 'warm_start']
+
+> handwritten
+False Positives (11):
+	(2) cannot do a non-empty take from an empty axes.
+	(1) With n_samples=56, test_size=0.997137380655745 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9901004323214014 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9881745108877757 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9967370642152303 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9938284847194944 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9951174470223697 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9828544544973485 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9947675590489226 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.997703983027737 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (0):
+
+> docstring
+False Positives (7):
+	(2) cannot do a non-empty take from an empty axes.
+	(1) With n_samples=56, test_size=0.9901004323214014 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9881745108877757 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9967370642152303 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9938284847194944 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9828544544973485 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (4):
+	(1) With n_samples=56, test_size=0.997137380655745 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9951174470223697 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9947675590489226 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.997703983027737 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+> WPanalysis
+False Positives (11):
+	(2) cannot do a non-empty take from an empty axes.
+	(1) With n_samples=56, test_size=0.997137380655745 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9901004323214014 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9881745108877757 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9967370642152303 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9938284847194944 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9951174470223697 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9828544544973485 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.9947675590489226 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=56, test_size=0.997703983027737 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'learning_rate': 0, 'loss': 0, 'n_estimators': 0, 'base_estimator': 0, 'random_state': 0, 'bootstrap': 0, 'criterion': 0, 'max_depth': 0, 'max_features': 0, 'max_leaf_nodes': 0, 'min_impurity_decrease': 0, 'min_samples_leaf': 0, 'min_samples_split': 0, 'min_weight_fraction_leaf': 0, 'oob_score': 0, 'warm_start': 0, 'min_impurity_split': 0, 'n_jobs': 0, 'verbose': 0, 'class_weight': 0, 'ccp_alpha': 0, 'max_samples': 0, 'affinity': 0, 'compute_full_tree': 0, 'linkage': 0, 'n_clusters': 0, 'memory': 0, 'connectivity': 0, 'pooling_func': 0, 'distance_threshold': 0, 'compute_distances': 0, 'accept_sparse': 0, 'check_inverse': 0, 'validate': 0, 'func': 0, 'inverse_func': 0, 'kw_args': 0, 'inv_kw_args': 0, 'var_smoothing': 0, 'priors': 0, 'n_iter_no_change': 0, 'subsample': 0, 'tol': 0, 'validation_fraction': 0, 'init': 0, 'alpha': 0}
+docstring: 
+ {'learning_rate': 0, 'loss': 0, 'n_estimators': 0, 'base_estimator': 0, 'random_state': 0, 'bootstrap': 0, 'criterion': 0, 'max_depth': 0, 'max_features': 0, 'max_leaf_nodes': 0, 'min_impurity_decrease': 0, 'min_samples_leaf': 0, 'min_samples_split': 0, 'min_weight_fraction_leaf': 0, 'oob_score': 0, 'warm_start': 0, 'min_impurity_split': 0, 'n_jobs': 0, 'verbose': 0, 'class_weight': 0, 'ccp_alpha': 0, 'max_samples': 0, 'affinity': 0, 'compute_full_tree': 0, 'linkage': 0, 'n_clusters': 0, 'memory': 0, 'connectivity': 0, 'pooling_func': 0, 'distance_threshold': 0, 'compute_distances': 0, 'accept_sparse': 0, 'check_inverse': 0, 'validate': 0, 'func': 0, 'inverse_func': 0, 'kw_args': 0, 'inv_kw_args': 0, 'var_smoothing': 0, 'priors': 0, 'n_iter_no_change': 0, 'subsample': 0, 'tol': 0, 'validation_fraction': 0, 'init': 0, 'alpha': 0}
+WPanalysis: 
+ {'learning_rate': 0, 'loss': 0, 'n_estimators': 0, 'base_estimator': 0, 'random_state': 0, 'bootstrap': 0, 'criterion': 0, 'max_depth': 0, 'max_features': 0, 'max_leaf_nodes': 0, 'min_impurity_decrease': 0, 'min_samples_leaf': 0, 'min_samples_split': 0, 'min_weight_fraction_leaf': 0, 'oob_score': 0, 'warm_start': 0, 'min_impurity_split': 0, 'n_jobs': 0, 'verbose': 0, 'class_weight': 0, 'ccp_alpha': 0, 'max_samples': 0, 'affinity': 0, 'compute_full_tree': 0, 'linkage': 0, 'n_clusters': 0, 'memory': 0, 'connectivity': 0, 'pooling_func': 0, 'distance_threshold': 0, 'compute_distances': 0, 'accept_sparse': 0, 'check_inverse': 0, 'validate': 0, 'func': 0, 'inverse_func': 0, 'kw_args': 0, 'inv_kw_args': 0, 'var_smoothing': 0, 'priors': 0, 'n_iter_no_change': 0, 'subsample': 0, 'tol': 0, 'validation_fraction': 0, 'init': 0, 'alpha': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+freq = 479
+{'description': "alpha, only if loss='huber' or loss='quantile'",
+ 'anyOf': [{'type': 'object', 'properties': {'alpha': {'enum': [0.9]}}},
+           {'type': 'object', 'properties': {'loss': {'enum': ['huber', 'quantile']}}}]}
+
+WPanalysis:

@@ -1,0 +1,45 @@
+>>> LabelSpreading  ( classifier )
+1000 trials: 1000 passed, 0 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/1)  |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+| WPanalysis_(6/71) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 71 total, 6 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['alpha', 'gamma', 'kernel', 'n_neighbors', 'tol', 'max_iter', 'n_jobs']
+
+> relevantToOptimizer:
+ ['kernel', 'gamma', 'n_neighbors', 'alpha', 'tol']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (0):
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'alpha': 0, 'gamma': 0, 'kernel': 0, 'n_neighbors': 0, 'tol': 0, 'max_iter': 0, 'n_jobs': 0}
+docstring: 
+ {'alpha': 0, 'gamma': 0, 'kernel': 0, 'n_neighbors': 0, 'tol': 0, 'max_iter': 0, 'n_jobs': 0}
+WPanalysis: 
+ {'alpha': 0, 'gamma': 0, 'kernel': 0, 'n_neighbors': 0, 'tol': 0, 'max_iter': 0, 'n_jobs': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

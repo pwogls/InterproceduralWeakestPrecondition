@@ -1,0 +1,49 @@
+{'description': 'Stack of estimators with a final regressor.',
+ 'allOf': [{'type': 'object',
+            'required': ['estimators', 'final_estimator', 'cv', 'n_jobs', 'passthrough'],
+            'relevantToOptimizer': ['estimators', 'final_estimator', 'cv', 'passthrough'],
+            'additionalProperties': False,
+            'properties': {'estimators': {'type': 'array',
+                                          'items': {'type': 'array',
+                                                    'laleType': 'tuple',
+                                                    'items': [{'type': 'string'},
+                                                              {'anyOf': [{'laleType': 'operator'}, {'enum': [None]}]}]},
+                                          'description': 'Base estimators which will be stacked together. Each element '
+                                                         'of the list is defined as a tuple of string (i.e. name) and '
+                                                         'an estimator instance. An estimator can be set to ‘drop’ '
+                                                         'using set_params.'},
+                           'final_estimator': {'anyOf': [{'laleType': 'operator'}, {'enum': [None]}],
+                                               'default': None,
+                                               'description': 'A regressor which will be used to combine the base '
+                                                              "estimators. The default classifier is a 'RidgeCV'"},
+                           'cv': {'description': 'Cross-validation as integer or as object that has a split function.\n'
+                                                 '                        The fit method performs cross validation on '
+                                                 'the input dataset for per\n'
+                                                 '                        trial, and uses the mean cross validation '
+                                                 'performance for optimization.\n'
+                                                 '                        This behavior is also impacted by '
+                                                 'handle_cv_failure flag.\n'
+                                                 '                        If integer: number of folds in '
+                                                 'sklearn.model_selection.StratifiedKFold.\n'
+                                                 '                        If object with split function: generator '
+                                                 'yielding (train, test) splits\n'
+                                                 '                        as arrays of indices. Can use any of the '
+                                                 'iterators from\n'
+                                                 '                        '
+                                                 'https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators.',
+                                  'anyOf': [{'type': 'integer',
+                                             'minimum': 1,
+                                             'default': 5,
+                                             'minimumForOptimizer': 3,
+                                             'maximumForOptimizer': 4,
+                                             'distribution': 'uniform'},
+                                            {'laleType': 'Any', 'forOptimizer': False}]},
+                           'n_jobs': {'anyOf': [{'type': 'integer'}, {'enum': [None]}],
+                                      'default': None,
+                                      'description': 'The number of jobs to run in parallel for ``fit``.'},
+                           'passthrough': {'type': 'boolean',
+                                           'default': False,
+                                           'description': 'When False, only the predictions of estimators will be used '
+                                                          "as training data for 'final_estimator'. When True, the "
+                                                          "'final_estimator' is trained on the predictions as well as "
+                                                          'the original training data.'}}}]}

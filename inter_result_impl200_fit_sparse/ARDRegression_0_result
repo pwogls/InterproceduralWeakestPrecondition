@@ -1,0 +1,39 @@
+>>> ARDRegression  ( regression )
+1000 trials: 0 passed, 1000 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/0)  |       0        |      1000       |       0        |        0        |    0.0    |  INF   |
+| WPanalysis_(5/36) |       0        |      1000       |       0        |        0        |    0.0    |  INF   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 36 total, 5 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['compute_score', 'copy_X', 'fit_intercept', 'n_iter', 'normalize', 'tol', 'alpha_1', 'alpha_2', 'lambda_1', 'lambda_2', 'threshold_lambda', 'verbose']
+
+> relevantToOptimizer:
+ ['n_iter', 'tol', 'compute_score', 'fit_intercept', 'normalize', 'copy_X']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (1000):
+	(1000) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+True Negatives (0):
+
+> WPanalysis
+False Positives (1000):
+	(1000) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

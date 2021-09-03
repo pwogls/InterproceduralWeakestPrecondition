@@ -1,0 +1,45 @@
+>>> TfidfVectorizer  ( transformer )
+10 trials: 10 passed, 0 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(2/2) |       10       |        0        |       0        |        0        |    1.0    |  1.0   |
+|    docstrings     |       -        |        -        |       -        |        -        |     -     |   -    |
+| WPanalysis_(4/14) |       10       |        0        |       0        |        0        |    1.0    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 14 total, 4 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['analyzer', 'binary', 'max_df', 'min_df', 'ngram_range', 'norm', 'smooth_idf', 'sublinear_tf', 'use_idf', 'input', 'encoding', 'decode_error', 'strip_accents', 'lowercase', 'preprocessor', 'tokenizer', 'stop_words', 'token_pattern', 'max_features', 'vocabulary', 'dtype']
+
+> relevantToOptimizer:
+ ['analyzer', 'ngram_range', 'max_df', 'min_df', 'binary', 'norm', 'use_idf', 'smooth_idf', 'sublinear_tf']
+
+> handwritten
+False Positives (0):
+True Negatives (0):
+
+> docstring
+False Positives (-):
+True Negatives (-):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'analyzer': 0, 'binary': 0, 'max_df': 0, 'min_df': 0, 'ngram_range': 0, 'norm': 0, 'smooth_idf': 0, 'sublinear_tf': 0, 'use_idf': 0, 'input': 0, 'encoding': 0, 'decode_error': 0, 'strip_accents': 0, 'lowercase': 0, 'preprocessor': 0, 'tokenizer': 0, 'stop_words': 0, 'token_pattern': 0, 'max_features': 0, 'vocabulary': 0, 'dtype': 0}
+docstring: 
+ {'analyzer': 0, 'binary': 0, 'max_df': 0, 'min_df': 0, 'ngram_range': 0, 'norm': 0, 'smooth_idf': 0, 'sublinear_tf': 0, 'use_idf': 0, 'input': 0, 'encoding': 0, 'decode_error': 0, 'strip_accents': 0, 'lowercase': 0, 'preprocessor': 0, 'tokenizer': 0, 'stop_words': 0, 'token_pattern': 0, 'max_features': 0, 'vocabulary': 0, 'dtype': 0}
+WPanalysis: 
+ {'analyzer': 0, 'binary': 0, 'max_df': 0, 'min_df': 0, 'ngram_range': 0, 'norm': 0, 'smooth_idf': 0, 'sublinear_tf': 0, 'use_idf': 0, 'input': 0, 'encoding': 0, 'decode_error': 0, 'strip_accents': 0, 'lowercase': 0, 'preprocessor': 0, 'tokenizer': 0, 'stop_words': 0, 'token_pattern': 0, 'max_features': 0, 'vocabulary': 0, 'dtype': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

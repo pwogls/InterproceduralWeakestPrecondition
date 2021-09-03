@@ -1,0 +1,48 @@
+>>> NMF  ( transformer )
+1000 trials: 719 passed, 281 failed.
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(1/1)  |      719       |       281       |       0        |        0        |   0.719   |  1.0   |
+|  docstrings_(1/1)  |      719       |       281       |       0        |        0        |   0.719   |  1.0   |
+| WPanalysis_(10/80) |      719       |       281       |       0        |        0        |   0.719   |  1.0   |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 80 total, 10 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['alpha', 'beta_loss', 'l1_ratio', 'max_iter', 'n_components', 'shuffle', 'solver', 'tol', 'init', 'random_state', 'verbose', 'regularization']
+
+> relevantToOptimizer:
+ ['alpha', 'beta_loss', 'l1_ratio', 'max_iter', 'n_components', 'shuffle', 'solver', 'tol']
+
+> handwritten
+False Positives (281):
+	(281) When beta_loss <= 0 and X contains zeros, the solver may diverge. Please add small values to X, or use a positive beta_loss.
+True Negatives (0):
+
+> docstring
+False Positives (281):
+	(281) When beta_loss <= 0 and X contains zeros, the solver may diverge. Please add small values to X, or use a positive beta_loss.
+True Negatives (0):
+
+> WPanalysis
+False Positives (281):
+	(281) When beta_loss <= 0 and X contains zeros, the solver may diverge. Please add small values to X, or use a positive beta_loss.
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'alpha': 0, 'beta_loss': 0, 'l1_ratio': 0, 'max_iter': 0, 'n_components': 0, 'shuffle': 0, 'solver': 0, 'tol': 0, 'init': 0, 'random_state': 0, 'verbose': 0, 'regularization': 0}
+docstring: 
+ {'alpha': 0, 'beta_loss': 0, 'l1_ratio': 0, 'max_iter': 0, 'n_components': 0, 'shuffle': 0, 'solver': 0, 'tol': 0, 'init': 0, 'random_state': 0, 'verbose': 0, 'regularization': 0}
+WPanalysis: 
+ {'alpha': 0, 'beta_loss': 0, 'l1_ratio': 0, 'max_iter': 0, 'n_components': 0, 'shuffle': 0, 'solver': 0, 'tol': 0, 'init': 0, 'random_state': 0, 'verbose': 0, 'regularization': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

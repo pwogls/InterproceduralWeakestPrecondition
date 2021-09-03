@@ -1,0 +1,45 @@
+>>> GaussianNB  ( classifier )
+1000 trials: 1000 passed, 0 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+| docstrings_(0/0)  |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+| WPanalysis_(8/74) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 74 total, 8 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['var_smoothing', 'priors']
+
+> relevantToOptimizer:
+ ['var_smoothing']
+
+> handwritten
+False Positives (0):
+True Negatives (0):
+
+> docstring
+False Positives (0):
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'learning_rate': 0, 'loss': 0, 'n_estimators': 0, 'base_estimator': 0, 'random_state': 0, 'bootstrap': 0, 'criterion': 0, 'max_depth': 0, 'max_features': 0, 'max_leaf_nodes': 0, 'min_impurity_decrease': 0, 'min_samples_leaf': 0, 'min_samples_split': 0, 'min_weight_fraction_leaf': 0, 'oob_score': 0, 'warm_start': 0, 'min_impurity_split': 0, 'n_jobs': 0, 'verbose': 0, 'class_weight': 0, 'ccp_alpha': 0, 'max_samples': 0, 'affinity': 0, 'compute_full_tree': 0, 'linkage': 0, 'n_clusters': 0, 'memory': 0, 'connectivity': 0, 'pooling_func': 0, 'distance_threshold': 0, 'compute_distances': 0, 'accept_sparse': 0, 'check_inverse': 0, 'validate': 0, 'func': 0, 'inverse_func': 0, 'kw_args': 0, 'inv_kw_args': 0, 'var_smoothing': 0, 'priors': 0}
+docstring: 
+ {'learning_rate': 0, 'loss': 0, 'n_estimators': 0, 'base_estimator': 0, 'random_state': 0, 'bootstrap': 0, 'criterion': 0, 'max_depth': 0, 'max_features': 0, 'max_leaf_nodes': 0, 'min_impurity_decrease': 0, 'min_samples_leaf': 0, 'min_samples_split': 0, 'min_weight_fraction_leaf': 0, 'oob_score': 0, 'warm_start': 0, 'min_impurity_split': 0, 'n_jobs': 0, 'verbose': 0, 'class_weight': 0, 'ccp_alpha': 0, 'max_samples': 0, 'affinity': 0, 'compute_full_tree': 0, 'linkage': 0, 'n_clusters': 0, 'memory': 0, 'connectivity': 0, 'pooling_func': 0, 'distance_threshold': 0, 'compute_distances': 0, 'accept_sparse': 0, 'check_inverse': 0, 'validate': 0, 'func': 0, 'inverse_func': 0, 'kw_args': 0, 'inv_kw_args': 0, 'var_smoothing': 0, 'priors': 0}
+WPanalysis: 
+ {'learning_rate': 0, 'loss': 0, 'n_estimators': 0, 'base_estimator': 0, 'random_state': 0, 'bootstrap': 0, 'criterion': 0, 'max_depth': 0, 'max_features': 0, 'max_leaf_nodes': 0, 'min_impurity_decrease': 0, 'min_samples_leaf': 0, 'min_samples_split': 0, 'min_weight_fraction_leaf': 0, 'oob_score': 0, 'warm_start': 0, 'min_impurity_split': 0, 'n_jobs': 0, 'verbose': 0, 'class_weight': 0, 'ccp_alpha': 0, 'max_samples': 0, 'affinity': 0, 'compute_full_tree': 0, 'linkage': 0, 'n_clusters': 0, 'memory': 0, 'connectivity': 0, 'pooling_func': 0, 'distance_threshold': 0, 'compute_distances': 0, 'accept_sparse': 0, 'check_inverse': 0, 'validate': 0, 'func': 0, 'inverse_func': 0, 'kw_args': 0, 'inv_kw_args': 0, 'var_smoothing': 0, 'priors': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

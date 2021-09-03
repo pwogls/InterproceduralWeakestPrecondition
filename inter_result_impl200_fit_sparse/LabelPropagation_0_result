@@ -1,0 +1,39 @@
+>>> LabelPropagation  ( classifier )
+1000 trials: 0 passed, 1000 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/1)  |       0        |      1000       |       0        |        0        |    0.0    |  INF   |
+| WPanalysis_(6/71) |       0        |      1000       |       0        |        0        |    0.0    |  INF   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 71 total, 6 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['gamma', 'kernel', 'n_neighbors', 'tol', 'max_iter', 'n_jobs']
+
+> relevantToOptimizer:
+ ['kernel', 'gamma', 'n_neighbors', 'tol']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (1000):
+	(1000) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+True Negatives (0):
+
+> WPanalysis
+False Positives (1000):
+	(1000) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

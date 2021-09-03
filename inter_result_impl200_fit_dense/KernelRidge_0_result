@@ -1,0 +1,49 @@
+>>> KernelRidge  ( regression )
+1000 trials: 603 passed, 397 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/0)  |      603       |       397       |       0        |        0        |   0.603   |  1.0   |
+| WPanalysis_(2/54) |      603       |       397       |       0        |        0        |   0.603   |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 54 total, 2 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['alpha', 'coef0', 'degree', 'kernel', 'gamma', 'kernel_params']
+
+> relevantToOptimizer:
+ ['alpha', 'kernel', 'degree', 'coef0']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (397):
+	(202) array must not contain infs or NaNs
+	(195) X should be a square kernel matrix
+True Negatives (0):
+
+> WPanalysis
+False Positives (397):
+	(202) array must not contain infs or NaNs
+	(195) X should be a square kernel matrix
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'alpha': 0, 'coef0': 0, 'degree': 0, 'kernel': 0, 'gamma': 0, 'kernel_params': 0}
+docstring: 
+ {'alpha': 0, 'coef0': 0, 'degree': 0, 'kernel': 0, 'gamma': 0, 'kernel_params': 0}
+WPanalysis: 
+ {'alpha': 0, 'coef0': 0, 'degree': 0, 'kernel': 0, 'gamma': 0, 'kernel_params': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

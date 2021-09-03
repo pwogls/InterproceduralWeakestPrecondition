@@ -1,0 +1,19 @@
+[1000,
+ 0,
+ ['handwritten', '-', '-', '-', '-', '-', '-'],
+ ['docstrings_(0/0)', 1000, 0, 0, 0, 1.0, 1.0],
+ ['WPanalysis_(3/24)', 0, 0, 0, 1000, 'INF', 0.0],
+ ['regressor', 'transformer', 'func', 'inverse_func', 'check_inverse'],
+ {'regressor': 0, 'transformer': 0, 'func': 0, 'inverse_func': 0, 'check_inverse': 0},
+ {'regressor': 0, 'transformer': 0, 'func': 0, 'inverse_func': 0, 'check_inverse': 0},
+ {'regressor': 0, 'transformer': 0, 'func': 0, 'inverse_func': 0, 'check_inverse': 0},
+ [],
+ {},
+ [],
+ {},
+ [{'description': "From /utils/validation.py:None:_ensure_sparse_format, Exception: raise TypeError(     'A sparse "
+                  'matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy '
+                  "array.'     ) ",
+   'type': 'object',
+   'not': {}}],
+ {'0': 1000}]

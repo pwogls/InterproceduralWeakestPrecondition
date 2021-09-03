@@ -1,0 +1,88 @@
+>>> QuantileTransformer  ( transformer )
+1000 trials: 983 passed, 17 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0) |      983       |       17        |       0        |        0        |   0.983   |  1.0   |
+| docstrings_(0/1)  |      983       |       17        |       0        |        0        |   0.983   |  1.0   |
+| WPanalysis_(3/14) |      983       |       17        |       0        |        0        |   0.983   |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 14 total, 3 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['copy', 'ignore_implicit_zeros', 'n_quantiles', 'output_distribution', 'subsample', 'random_state']
+
+> relevantToOptimizer:
+ ['copy', 'ignore_implicit_zeros', 'n_quantiles', 'output_distribution', 'subsample']
+
+> handwritten
+False Positives (17):
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1712 quantiles and 417 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1823 quantiles and 937 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1097 quantiles and 49 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1393 quantiles and 294 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 956 quantiles and 292 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1469 quantiles and 1102 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1679 quantiles and 1550 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1060 quantiles and 226 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1224 quantiles and 883 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1412 quantiles and 127 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1172 quantiles and 284 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 207 quantiles and 191 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 757 quantiles and 360 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1815 quantiles and 118 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1183 quantiles and 1056 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1009 quantiles and 971 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 831 quantiles and 759 samples.
+True Negatives (0):
+
+> docstring
+False Positives (17):
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1712 quantiles and 417 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1823 quantiles and 937 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1097 quantiles and 49 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1393 quantiles and 294 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 956 quantiles and 292 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1469 quantiles and 1102 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1679 quantiles and 1550 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1060 quantiles and 226 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1224 quantiles and 883 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1412 quantiles and 127 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1172 quantiles and 284 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 207 quantiles and 191 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 757 quantiles and 360 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1815 quantiles and 118 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1183 quantiles and 1056 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1009 quantiles and 971 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 831 quantiles and 759 samples.
+True Negatives (0):
+
+> WPanalysis
+False Positives (17):
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1712 quantiles and 417 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1823 quantiles and 937 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1097 quantiles and 49 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1393 quantiles and 294 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 956 quantiles and 292 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1469 quantiles and 1102 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1679 quantiles and 1550 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1060 quantiles and 226 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1224 quantiles and 883 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1412 quantiles and 127 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1172 quantiles and 284 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 207 quantiles and 191 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 757 quantiles and 360 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1815 quantiles and 118 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1183 quantiles and 1056 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 1009 quantiles and 971 samples.
+	(1) The number of quantiles cannot be greater than the number of samples used. Got 831 quantiles and 759 samples.
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

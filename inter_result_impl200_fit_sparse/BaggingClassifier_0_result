@@ -1,0 +1,87 @@
+>>> BaggingClassifier  ( classifier )
+1000 trials: 619 passed, 381 failed.
++-------------------+----------------+-----------------+----------------+-----------------+--------------------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives |     precision      | recall |
++-------------------+----------------+-----------------+----------------+-----------------+--------------------+--------+
+| handwritten_(0/0) |      619       |       381       |       0        |        0        |       0.619        |  1.0   |
+|    docstrings     |       -        |        -        |       -        |        -        |         -          |   -    |
+| WPanalysis_(7/92) |      619       |       19        |      362       |        0        | 0.9702194357366771 |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+--------------------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 92 total, 7 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['base_estimator', 'bootstrap', 'bootstrap_features', 'max_features', 'max_samples', 'n_estimators', 'oob_score', 'warm_start', 'n_jobs', 'random_state', 'verbose']
+
+> relevantToOptimizer:
+ ['bootstrap', 'bootstrap_features', 'max_features', 'max_samples', 'n_estimators', 'oob_score', 'warm_start']
+
+> handwritten
+False Positives (381):
+	(234) Out of bag estimation only available if bootstrap=True
+	(128) Out of bag estimate only available if warm_start=False
+	(2) operands could not be broadcast together with shapes (593,10) (593,9) (593,10) 
+	(1) operands could not be broadcast together with shapes (567,10) (567,9) (567,10) 
+	(1) operands could not be broadcast together with shapes (605,10) (605,9) (605,10) 
+	(1) operands could not be broadcast together with shapes (597,10) (597,9) (597,10) 
+	(1) operands could not be broadcast together with shapes (572,10) (572,9) (572,10) 
+	(1) operands could not be broadcast together with shapes (600,10) (600,9) (600,10) 
+	(1) operands could not be broadcast together with shapes (603,10) (603,9) (603,10) 
+	(1) operands could not be broadcast together with shapes (587,10) (587,9) (587,10) 
+	(1) max_samples must be in (0, n_samples]
+	(1) operands could not be broadcast together with shapes (588,10) (588,9) (588,10) 
+	(1) operands could not be broadcast together with shapes (610,10) (610,8) (610,10) 
+	(1) operands could not be broadcast together with shapes (604,10) (604,9) (604,10) 
+	(1) operands could not be broadcast together with shapes (620,10) (620,6) (620,10) 
+	(1) operands could not be broadcast together with shapes (583,10) (583,9) (583,10) 
+	(1) operands could not be broadcast together with shapes (553,10) (553,9) (553,10) 
+	(1) operands could not be broadcast together with shapes (602,10) (602,9) (602,10) 
+	(1) operands could not be broadcast together with shapes (580,10) (580,9) (580,10) 
+	(1) operands could not be broadcast together with shapes (599,10) (599,9) (599,10) 
+True Negatives (0):
+
+> docstring
+False Positives (-):
+True Negatives (-):
+
+> WPanalysis
+False Positives (19):
+	(2) operands could not be broadcast together with shapes (593,10) (593,9) (593,10) 
+	(1) operands could not be broadcast together with shapes (567,10) (567,9) (567,10) 
+	(1) operands could not be broadcast together with shapes (605,10) (605,9) (605,10) 
+	(1) operands could not be broadcast together with shapes (597,10) (597,9) (597,10) 
+	(1) operands could not be broadcast together with shapes (572,10) (572,9) (572,10) 
+	(1) operands could not be broadcast together with shapes (600,10) (600,9) (600,10) 
+	(1) operands could not be broadcast together with shapes (603,10) (603,9) (603,10) 
+	(1) operands could not be broadcast together with shapes (587,10) (587,9) (587,10) 
+	(1) max_samples must be in (0, n_samples]
+	(1) operands could not be broadcast together with shapes (588,10) (588,9) (588,10) 
+	(1) operands could not be broadcast together with shapes (610,10) (610,8) (610,10) 
+	(1) operands could not be broadcast together with shapes (604,10) (604,9) (604,10) 
+	(1) operands could not be broadcast together with shapes (620,10) (620,6) (620,10) 
+	(1) operands could not be broadcast together with shapes (583,10) (583,9) (583,10) 
+	(1) operands could not be broadcast together with shapes (553,10) (553,9) (553,10) 
+	(1) operands could not be broadcast together with shapes (602,10) (602,9) (602,10) 
+	(1) operands could not be broadcast together with shapes (580,10) (580,9) (580,10) 
+	(1) operands could not be broadcast together with shapes (599,10) (599,9) (599,10) 
+True Negatives (362):
+	(234) Out of bag estimation only available if bootstrap=True
+	(128) Out of bag estimate only available if warm_start=False
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:
+freq = 128
+{'description': "From /ensemble/_bagging.py:BaseBagging:_fit, Exception: raise ValueError('Out of bag estimate only "
+                "available if warm_start=False') ",
+ 'anyOf': [{'type': 'object', 'properties': {'warm_start': {'enum': [False]}}},
+           {'type': 'object', 'properties': {'oob_score': {'enum': [False]}}}]}
+freq = 234
+{'description': "From /ensemble/_bagging.py:BaseBagging:_fit, Exception: raise ValueError('Out of bag estimation only "
+                "available if bootstrap=True') ",
+ 'anyOf': [{'type': 'object', 'properties': {'bootstrap': {'enum': [True]}}},
+           {'type': 'object', 'properties': {'oob_score': {'enum': [False]}}}]}

@@ -1,0 +1,47 @@
+>>> CalibratedClassifierCV  ( classifier )
+10 trials: 6 passed, 4 failed.
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten     |       -        |        -        |       -        |        -        |     -     |   -    |
+|  docstrings_(0/0)  |       6        |        4        |       0        |        0        |    0.6    |  1.0   |
+| WPanalysis_(3/112) |       6        |        4        |       0        |        0        |    0.6    |  1.0   |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 112 total, 3 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['base_estimator', 'cv', 'ensemble', 'method', 'n_jobs']
+
+> relevantToOptimizer:
+ ['method', 'cv', 'ensemble']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (4):
+	(4) 
+True Negatives (0):
+
+> WPanalysis
+False Positives (4):
+	(4) 
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'base_estimator': 0, 'cv': 0, 'ensemble': 0, 'method': 0, 'n_jobs': 0}
+docstring: 
+ {'base_estimator': 0, 'cv': 0, 'ensemble': 0, 'method': 0, 'n_jobs': 0}
+WPanalysis: 
+ {'base_estimator': 0, 'cv': 0, 'ensemble': 0, 'method': 0, 'n_jobs': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

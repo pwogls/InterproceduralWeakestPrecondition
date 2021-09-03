@@ -1,0 +1,83 @@
+>>> PassiveAggressiveClassifier  ( classifier )
+1000 trials: 983 passed, 17 failed.
++---------------------+----------------+-----------------+----------------+-----------------+--------------------+---------------------+
+|        name         | true_positives | false_positives | true_negatives | false_negatives |     precision      |       recall        |
++---------------------+----------------+-----------------+----------------+-----------------+--------------------+---------------------+
+|  handwritten_(0/0)  |      983       |       17        |       0        |        0        |       0.983        |         1.0         |
+|  docstrings_(1/2)   |      463       |       17        |       0        |       520       | 0.9645833333333333 | 0.47100712105798576 |
+| WPanalysis_(21/103) |      983       |       17        |       0        |        0        |       0.983        |         1.0         |
++---------------------+----------------+-----------------+----------------+-----------------+--------------------+---------------------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 103 total, 21 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['C', 'average', 'early_stopping', 'fit_intercept', 'loss', 'max_iter', 'n_iter_no_change', 'shuffle', 'tol', 'validation_fraction', 'warm_start', 'verbose', 'n_jobs', 'random_state', 'class_weight']
+
+> relevantToOptimizer:
+ ['C', 'average', 'early_stopping', 'fit_intercept', 'loss', 'max_iter', 'n_iter', 'n_iter_no_change', 'shuffle', 'tol', 'validation_fraction', 'warm_start']
+
+> handwritten
+False Positives (17):
+	(2) The test_size = 8 should be greater or equal to the number of classes = 10
+	(2) The train_size = 4 should be greater or equal to the number of classes = 10
+	(2) The test_size = 7 should be greater or equal to the number of classes = 10
+	(1) The test_size = 5 should be greater or equal to the number of classes = 10
+	(1) The test_size = 3 should be greater or equal to the number of classes = 10
+	(1) The train_size = 7 should be greater or equal to the number of classes = 10
+	(1) The train_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 9 should be greater or equal to the number of classes = 10
+	(1) The test_size = 4 should be greater or equal to the number of classes = 10
+	(1) The train_size = 6 should be greater or equal to the number of classes = 10
+	(1) The test_size = 1 should be greater or equal to the number of classes = 10
+	(1) The train_size = 5 should be greater or equal to the number of classes = 10
+	(1) The train_size = 3 should be greater or equal to the number of classes = 10
+	(1) With n_samples=628, test_size=0.9992770759260455 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (0):
+
+> docstring
+False Positives (17):
+	(2) The test_size = 8 should be greater or equal to the number of classes = 10
+	(2) The train_size = 4 should be greater or equal to the number of classes = 10
+	(2) The test_size = 7 should be greater or equal to the number of classes = 10
+	(1) The test_size = 5 should be greater or equal to the number of classes = 10
+	(1) The test_size = 3 should be greater or equal to the number of classes = 10
+	(1) The train_size = 7 should be greater or equal to the number of classes = 10
+	(1) The train_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 9 should be greater or equal to the number of classes = 10
+	(1) The test_size = 4 should be greater or equal to the number of classes = 10
+	(1) The train_size = 6 should be greater or equal to the number of classes = 10
+	(1) The test_size = 1 should be greater or equal to the number of classes = 10
+	(1) The train_size = 5 should be greater or equal to the number of classes = 10
+	(1) The train_size = 3 should be greater or equal to the number of classes = 10
+	(1) With n_samples=628, test_size=0.9992770759260455 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (0):
+
+> WPanalysis
+False Positives (17):
+	(2) The test_size = 8 should be greater or equal to the number of classes = 10
+	(2) The train_size = 4 should be greater or equal to the number of classes = 10
+	(2) The test_size = 7 should be greater or equal to the number of classes = 10
+	(1) The test_size = 5 should be greater or equal to the number of classes = 10
+	(1) The test_size = 3 should be greater or equal to the number of classes = 10
+	(1) The train_size = 7 should be greater or equal to the number of classes = 10
+	(1) The train_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 9 should be greater or equal to the number of classes = 10
+	(1) The test_size = 4 should be greater or equal to the number of classes = 10
+	(1) The train_size = 6 should be greater or equal to the number of classes = 10
+	(1) The test_size = 1 should be greater or equal to the number of classes = 10
+	(1) The train_size = 5 should be greater or equal to the number of classes = 10
+	(1) The train_size = 3 should be greater or equal to the number of classes = 10
+	(1) With n_samples=628, test_size=0.9992770759260455 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+freq = 520
+{'description': 'validation_fraction, only used if early_stopping is true',
+ 'anyOf': [{'type': 'object', 'properties': {'validation_fraction': {'enum': [0.1]}}},
+           {'type': 'object', 'properties': {'early_stopping': {'enum': [True]}}}]}
+
+WPanalysis:

@@ -1,0 +1,85 @@
+{'$schema': 'http://json-schema.org/draft-04/schema#',
+ 'description': 'Hyperparam schema for LinearSVR (Linear Support Vector Regression).',
+ 'allOf': [{'type': 'object',
+            'required': ['epsilon',
+                         'tol',
+                         'C',
+                         'loss',
+                         'fit_intercept',
+                         'intercept_scaling',
+                         'dual',
+                         'verbose',
+                         'random_state',
+                         'max_iter'],
+            'relevantToOptimizer': ['epsilon', 'tol', 'loss', 'fit_intercept', 'dual', 'max_iter'],
+            'additionalProperties': False,
+            'properties': {'epsilon': {'type': 'number',
+                                       'minimumForOptimizer': 1e-08,
+                                       'maximumForOptimizer': 1.35,
+                                       'distribution': 'loguniform',
+                                       'default': 0.0,
+                                       'description': 'Epsilon parameter in the epsilon-insensitive loss function.\n'
+                                                      'Note that the value of this parameter depends on the scale of '
+                                                      'the target variable y. If unsure, set epsilon=0.'},
+                           'tol': {'type': 'number',
+                                   'minimumForOptimizer': 1e-08,
+                                   'maximumForOptimizer': 0.01,
+                                   'distribution': 'loguniform',
+                                   'default': 0.0001,
+                                   'description': 'Tolerance for stopping criteria.'},
+                           'C': {'type': 'number',
+                                 'default': 1.0,
+                                 'description': 'Regularization parameter.\n'
+                                                'The strength of the regularization is inversely proportional to C. '
+                                                'Must be strictly positive.'},
+                           'loss': {'enum': ['hinge',
+                                             'squared_epsilon_insensitive',
+                                             'squared_hinge',
+                                             'epsilon_insensitive'],
+                                    'default': 'epsilon_insensitive',
+                                    'description': 'Specifies the loss function.\n'
+                                                   'The epsilon-insensitive loss (standard SVR) is the L1 loss, while '
+                                                   'the squared epsilon-insensitive loss '
+                                                   '(‘squared_epsilon_insensitive’) is the L2 loss.'},
+                           'fit_intercept': {'type': 'boolean',
+                                             'default': True,
+                                             'description': 'Whether to calculate the intercept for this model.\n'
+                                                            'If set to false, no intercept will be used in '
+                                                            'calculations (i.e. data is expected to be already '
+                                                            'centered).'},
+                           'intercept_scaling': {'type': 'number',
+                                                 'default': 1.0,
+                                                 'description': 'When self.fit_intercept is True, instance vector x '
+                                                                'becomes [x, self.intercept_scaling],\n'
+                                                                'i.e. a “synthetic” feature with constant value equals '
+                                                                'to intercept_scaling is appended to the instance '
+                                                                'vector.\n'
+                                                                'The intercept becomes intercept_scaling * synthetic '
+                                                                'feature weight Note! the synthetic feature weight is '
+                                                                'subject to l1/l2 regularization as all other '
+                                                                'features.\n'
+                                                                'To lessen the effect of regularization on synthetic '
+                                                                'feature weight (and therefore on the intercept) '
+                                                                'intercept_scaling has to be increased.'},
+                           'dual': {'type': 'boolean',
+                                    'default': True,
+                                    'description': 'Select the algorithm to either solve the dual or primal '
+                                                   'optimization problem.\n'
+                                                   'Prefer dual=False when n_samples > n_features.'},
+                           'verbose': {'type': 'integer',
+                                       'default': 0,
+                                       'description': 'Enable verbose output.\n'
+                                                      'Note that this setting takes advantage of a per-process runtime '
+                                                      'setting in liblinear that, if enabled, may not work properly in '
+                                                      'a multithreaded context.'},
+                           'random_state': {'description': 'Seed of pseudo-random number generator.',
+                                            'anyOf': [{'laleType': 'numpy.random.RandomState'},
+                                                      {'description': 'RandomState used by np.random', 'enum': [None]},
+                                                      {'description': 'Explicit seed.', 'type': 'integer'}],
+                                            'default': None},
+                           'max_iter': {'type': 'integer',
+                                        'minimumForOptimizer': 10,
+                                        'maximumForOptimizer': 1000,
+                                        'distribution': 'uniform',
+                                        'default': 1000,
+                                        'description': 'The maximum number of iterations to be run.'}}}]}

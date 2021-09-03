@@ -1,0 +1,45 @@
+>>> SkewedChi2Sampler  ( transformer )
+1000 trials: 1000 passed, 0 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/0)  |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+| WPanalysis_(1/11) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 11 total, 1 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['n_components', 'skewedness', 'random_state']
+
+> relevantToOptimizer:
+ ['n_components']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (0):
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'n_components': 0, 'skewedness': 0, 'random_state': 0}
+docstring: 
+ {'n_components': 0, 'skewedness': 0, 'random_state': 0}
+WPanalysis: 
+ {'n_components': 0, 'skewedness': 0, 'random_state': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

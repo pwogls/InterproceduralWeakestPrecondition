@@ -1,0 +1,39 @@
+>>> Pipeline  ( transformer )
+10 trials: 0 passed, 10 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0) |       0        |       10        |       0        |        0        |    0.0    |  INF   |
+|    docstrings     |       -        |        -        |       -        |        -        |     -     |   -    |
+| WPanalysis_(0/0)  |       0        |       10        |       0        |        0        |    0.0    |  INF   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 0 total, 0 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['steps', 'memory', 'verbose']
+
+> relevantToOptimizer:
+ []
+
+> handwritten
+False Positives (10):
+	(10) 
+True Negatives (0):
+
+> docstring
+False Positives (-):
+True Negatives (-):
+
+> WPanalysis
+False Positives (10):
+	(10) 
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

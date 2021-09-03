@@ -1,0 +1,45 @@
+>>> BernoulliNB  ( classifier )
+1000 trials: 762 passed, 238 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/0)  |      762       |       238       |       0        |        0        |   0.762   |  1.0   |
+| WPanalysis_(4/62) |      762       |        0        |      238       |        0        |    1.0    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 62 total, 4 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['alpha', 'binarize', 'fit_prior', 'class_prior']
+
+> relevantToOptimizer:
+ ['alpha', 'fit_prior', 'binarize']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (238):
+	(238) Cannot binarize a sparse matrix with threshold < 0
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (238):
+	(238) Cannot binarize a sparse matrix with threshold < 0
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:
+freq = 238
+{'description': "From /preprocessing/_data.py:None:binarize, Exception: raise ValueError('Cannot binarize a sparse "
+                "matrix with threshold < 0') ",
+ 'anyOf': [{'type': 'object', 'properties': {'binarize': {'enum': [None]}}},
+           {'type': 'object', 'not': {}},
+           {'type': 'object', 'properties': {'binarize': {'type': 'number', 'minimum': 0}}}]}

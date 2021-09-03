@@ -1,0 +1,49 @@
+>>> KNeighborsRegressor  ( regression )
+1000 trials: 912 passed, 88 failed.
++-------------------+----------------+-----------------+----------------+-----------------+--------------------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives |     precision      | recall |
++-------------------+----------------+-----------------+----------------+-----------------+--------------------+--------+
+| handwritten_(2/2) |      285       |       42        |       46       |       627       | 0.8715596330275229 | 0.3125 |
+| docstrings_(0/0)  |      912       |       88        |       0        |        0        |       0.912        |  1.0   |
+| WPanalysis_(1/87) |      912       |       88        |       0        |        0        |       0.912        |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+--------------------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 87 total, 1 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['algorithm', 'leaf_size', 'metric', 'n_neighbors', 'p', 'weights', 'metric_params', 'n_jobs']
+
+> relevantToOptimizer:
+ ['algorithm', 'leaf_size', 'metric', 'n_neighbors', 'p']
+
+> handwritten
+False Positives (42):
+	(42) Metric 'minkowski' not valid for sparse input. Use sorted(sklearn.neighbors.VALID_METRICS_SPARSE['brute']) to get valid options. Metric can also be a callable function.
+True Negatives (46):
+	(46) Metric 'minkowski' not valid for sparse input. Use sorted(sklearn.neighbors.VALID_METRICS_SPARSE['brute']) to get valid options. Metric can also be a callable function.
+
+> docstring
+False Positives (88):
+	(88) Metric 'minkowski' not valid for sparse input. Use sorted(sklearn.neighbors.VALID_METRICS_SPARSE['brute']) to get valid options. Metric can also be a callable function.
+True Negatives (0):
+
+> WPanalysis
+False Positives (88):
+	(88) Metric 'minkowski' not valid for sparse input. Use sorted(sklearn.neighbors.VALID_METRICS_SPARSE['brute']) to get valid options. Metric can also be a callable function.
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+freq = 488
+{'description': 'The leaf size only matters for tree algorithms.',
+ 'anyOf': [{'type': 'object', 'properties': {'algorithm': {'enum': ['ball_tree', 'kd_tree']}}},
+           {'type': 'object', 'properties': {'leaf_size': {'enum': [30]}}}]}
+freq = 185
+{'description': 'The power parameter is specific to the minkowski metric.',
+ 'anyOf': [{'type': 'object', 'properties': {'metric': {'enum': ['minkowski']}}},
+           {'type': 'object', 'properties': {'p': {'enum': [2]}}}]}
+
+docstring:
+
+WPanalysis:

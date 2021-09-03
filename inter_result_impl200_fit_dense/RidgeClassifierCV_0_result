@@ -1,0 +1,52 @@
+>>> RidgeClassifierCV  ( classifier )
+1000 trials: 758 passed, 242 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/1)  |      758       |       242       |       0        |        0        |   0.758   |  1.0   |
+| WPanalysis_(5/65) |      758       |        0        |      242       |        0        |    1.0    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 65 total, 5 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['class_weight', 'cv', 'fit_intercept', 'normalize', 'store_cv_values', 'alphas', 'scoring']
+
+> relevantToOptimizer:
+ ['fit_intercept', 'normalize', 'cv', 'class_weight', 'store_cv_values']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (242):
+	(242) cv!=None and store_cv_values=True are incompatible
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (242):
+	(242) cv!=None and store_cv_values=True are incompatible
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'class_weight': 0, 'cv': 0, 'fit_intercept': 0, 'normalize': 0, 'store_cv_values': 0, 'alphas': 0, 'scoring': 0}
+docstring: 
+ {'class_weight': 0, 'cv': 0, 'fit_intercept': 0, 'normalize': 0, 'store_cv_values': 0, 'alphas': 0, 'scoring': 0}
+WPanalysis: 
+ {'class_weight': 0, 'cv': 0, 'fit_intercept': 0, 'normalize': 0, 'store_cv_values': 0, 'alphas': 0, 'scoring': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:
+freq = 242
+{'description': "From /linear_model/_ridge.py:_BaseRidgeCV:fit, Exception: raise ValueError('cv!=None and "
+                "store_cv_values=True are incompatible') ",
+ 'anyOf': [{'type': 'object', 'properties': {'cv': {'enum': [None]}}},
+           {'type': 'object', 'properties': {'store_cv_values': {'enum': [False]}}}]}

@@ -1,0 +1,45 @@
+>>> ExtraTreesClassifier  ( classifier )
+1000 trials: 724 passed, 276 failed.
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(1/1)  |      724       |       276       |       0        |        0        |   0.724   |  1.0   |
+|  docstrings_(0/1)  |      724       |       276       |       0        |        0        |   0.724   |  1.0   |
+| WPanalysis_(14/95) |      724       |        0        |      276       |        0        |    1.0    |  1.0   |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 95 total, 14 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['bootstrap', 'criterion', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'n_estimators', 'oob_score', 'warm_start', 'min_impurity_split', 'n_jobs', 'random_state', 'verbose', 'class_weight', 'ccp_alpha', 'max_samples']
+
+> relevantToOptimizer:
+ ['bootstrap', 'criterion', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'n_estimators', 'oob_score', 'warm_start']
+
+> handwritten
+False Positives (276):
+	(276) Out of bag estimation only available if bootstrap=True
+True Negatives (0):
+
+> docstring
+False Positives (276):
+	(276) Out of bag estimation only available if bootstrap=True
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (276):
+	(276) Out of bag estimation only available if bootstrap=True
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:
+freq = 276
+{'description': "From /ensemble/_forest.py:BaseForest:fit, Exception: raise ValueError('Out of bag estimation only "
+                "available if bootstrap=True') ",
+ 'anyOf': [{'type': 'object', 'properties': {'bootstrap': {'enum': [True]}}},
+           {'type': 'object', 'properties': {'oob_score': {'enum': [False]}}}]}

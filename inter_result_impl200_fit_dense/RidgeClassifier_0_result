@@ -1,0 +1,45 @@
+>>> RidgeClassifier  ( classifier )
+1000 trials: 1000 passed, 0 failed.
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0)  |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+|  docstrings_(0/1)  |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+| WPanalysis_(4/185) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 185 total, 4 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'normalize', 'solver', 'tol', 'class_weight', 'random_state']
+
+> relevantToOptimizer:
+ ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'normalize', 'solver', 'tol']
+
+> handwritten
+False Positives (0):
+True Negatives (0):
+
+> docstring
+False Positives (0):
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'alpha': 0, 'copy_X': 0, 'fit_intercept': 0, 'max_iter': 0, 'normalize': 0, 'solver': 0, 'tol': 0, 'class_weight': 0, 'random_state': 0}
+docstring: 
+ {'alpha': 0, 'copy_X': 0, 'fit_intercept': 0, 'max_iter': 0, 'normalize': 0, 'solver': 0, 'tol': 0, 'class_weight': 0, 'random_state': 0}
+WPanalysis: 
+ {'alpha': 0, 'copy_X': 0, 'fit_intercept': 0, 'max_iter': 0, 'normalize': 0, 'solver': 0, 'tol': 0, 'class_weight': 0, 'random_state': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

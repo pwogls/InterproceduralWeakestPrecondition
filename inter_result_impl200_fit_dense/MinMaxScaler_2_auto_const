@@ -1,0 +1,26 @@
+{'allOf': [{'description': 'This first sub-object lists all constructor arguments with their types, one at a time, '
+                           'omitting cross-argument constraints.',
+            'type': 'object',
+            'additionalProperties': False,
+            'required': ['feature_range', 'copy'],
+            'relevantToOptimizer': ['copy', 'feature_range'],
+            'properties': {'feature_range': {'description': 'Desired range of transformed data.',
+                                             'type': 'array',
+                                             'laleType': 'tuple',
+                                             'minItems': 2,
+                                             'maxItems': 2,
+                                             'items': [{'type': 'number',
+                                                        'minimumForOptimizer': -1,
+                                                        'maximumForOptimizer': 0},
+                                                       {'type': 'number',
+                                                        'minimumForOptimizer': 0.001,
+                                                        'maximumForOptimizer': 1}],
+                                             'default': [0, 1]},
+                           'copy': {'description': 'Set to False to perform inplace row normalization and avoid a copy '
+                                                   '(if the input is already a numpy array).',
+                                    'type': 'boolean',
+                                    'default': True},
+                           'clip': {'type': 'boolean',
+                                    'description': 'Set to True to clip transformed values of held-out data to '
+                                                   'provided feature range.',
+                                    'default': False}}}]}

@@ -1,0 +1,9 @@
+{'allOf': [{'type': 'object',
+            'required': ['copy'],
+            'relevantToOptimizer': ['copy'],
+            'additionalProperties': False,
+            'properties': {'copy': {'XXX TODO XXX': 'boolean, optional, default is True',
+                                    'description': 'Set to False to perform inplace scaling and avoid a copy (if the '
+                                                   'input is already a numpy array).',
+                                    'type': 'boolean',
+                                    'default': True}}}]}

@@ -1,0 +1,48 @@
+>>> OneHotEncoder  ( transformer )
+1000 trials: 499 passed, 501 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0) |      499       |       501       |       0        |        0        |   0.499   |  1.0   |
+| docstrings_(0/0)  |      499       |       501       |       0        |        0        |   0.499   |  1.0   |
+| WPanalysis_(4/36) |      499       |       501       |       0        |        0        |   0.499   |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 36 total, 4 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['handle_unknown', 'sparse', 'categories', 'dtype']
+
+> relevantToOptimizer:
+ ['handle_unknown', 'sparse']
+
+> handwritten
+False Positives (501):
+	(501) Found unknown categories [4.8, 5.0, 6.0, 7.6, 7.7] in column 0 during transform
+True Negatives (0):
+
+> docstring
+False Positives (501):
+	(501) Found unknown categories [4.8, 5.0, 6.0, 7.6, 7.7] in column 0 during transform
+True Negatives (0):
+
+> WPanalysis
+False Positives (501):
+	(501) Found unknown categories [4.8, 5.0, 6.0, 7.6, 7.7] in column 0 during transform
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'handle_unknown': 0, 'sparse': 0, 'categories': 0, 'dtype': 0}
+docstring: 
+ {'handle_unknown': 0, 'sparse': 0, 'categories': 0, 'dtype': 0}
+WPanalysis: 
+ {'handle_unknown': 0, 'sparse': 0, 'categories': 0, 'dtype': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

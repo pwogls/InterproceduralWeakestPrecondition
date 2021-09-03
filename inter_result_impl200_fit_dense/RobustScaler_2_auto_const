@@ -1,0 +1,34 @@
+{'allOf': [{'type': 'object',
+            'required': ['quantile_range', 'copy'],
+            'relevantToOptimizer': ['copy', 'quantile_range', 'with_centering', 'with_scaling'],
+            'additionalProperties': False,
+            'properties': {'with_centering': {'type': 'boolean',
+                                              'default': True,
+                                              'description': 'If True, center the data before scaling.'},
+                           'with_scaling': {'type': 'boolean',
+                                            'default': True,
+                                            'description': 'If True, scale the data to interquartile range.'},
+                           'quantile_range': {'type': 'array',
+                                              'laleType': 'tuple',
+                                              'minItemsForOptimizer': 2,
+                                              'maxItemsForOptimizer': 2,
+                                              'items': [{'type': 'number',
+                                                         'minimumForOptimizer': 0.001,
+                                                         'maximumForOptimizer': 0.3},
+                                                        {'type': 'number',
+                                                         'minimumForOptimizer': 0.7,
+                                                         'maximumForOptimizer': 0.999}],
+                                              'default': [0.25, 0.75],
+                                              'description': 'Default: (25.0, 75.0) = (1st quantile, 3rd quantile) = '
+                                                             'IQR'},
+                           'copy': {'type': 'boolean',
+                                    'default': True,
+                                    'description': 'If False, try to avoid a copy and do inplace scaling instead.'},
+                           'unit_variance': {'default': False,
+                                             'description': 'If True, scale data so that normally distributed features '
+                                                            'have a variance of 1. In general, if the difference '
+                                                            'between the x-values of q_max and q_min for a standard '
+                                                            'normal distribution is greater than 1, the dataset will '
+                                                            'be scaled down. If less than 1, the dataset will be '
+                                                            'scaled up.',
+                                             'type': 'boolean'}}}]}

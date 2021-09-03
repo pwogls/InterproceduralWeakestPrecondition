@@ -1,0 +1,155 @@
+{'description': 'Hyperparameter schema.',
+ 'allOf': [{'description': 'This first sub-object lists all constructor arguments with their types, one at a time, '
+                           'omitting cross-argument constraints.',
+            'type': 'object',
+            'additionalProperties': False,
+            'required': ['penalty',
+                         'dual',
+                         'tol',
+                         'C',
+                         'fit_intercept',
+                         'intercept_scaling',
+                         'class_weight',
+                         'random_state',
+                         'solver',
+                         'max_iter',
+                         'multi_class',
+                         'verbose',
+                         'warm_start',
+                         'n_jobs'],
+            'relevantToOptimizer': ['dual',
+                                    'tol',
+                                    'fit_intercept',
+                                    'solver',
+                                    'multi_class',
+                                    'intercept_scaling',
+                                    'max_iter'],
+            'properties': {'solver': {'default': 'lbfgs',
+                                      'description': 'Algorithm for optimization problem.',
+                                      'enum': ['newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga']},
+                           'penalty': {'default': 'l2',
+                                       'description': 'Norm used in the penalization.',
+                                       'enum': ['l1', 'l2', 'elasticnet', 'none']},
+                           'dual': {'description': 'Dual or primal formulation.\n'
+                                                   'Dual formulation is only implemented for l2 penalty with liblinear '
+                                                   'solver. Prefer dual=False when n_samples > n_features.',
+                                    'type': 'boolean',
+                                    'default': False},
+                           'C': {'description': 'Inverse regularization strength. Smaller values specify stronger '
+                                                'regularization.',
+                                 'type': 'number',
+                                 'distribution': 'loguniform',
+                                 'minimum': 0.0,
+                                 'exclusiveMinimum': True,
+                                 'default': 1.0,
+                                 'minimumForOptimizer': 0.03125,
+                                 'maximumForOptimizer': 32768},
+                           'tol': {'description': 'Tolerance for stopping criteria.',
+                                   'type': 'number',
+                                   'distribution': 'loguniform',
+                                   'minimum': 0.0,
+                                   'exclusiveMinimum': True,
+                                   'default': 0.0001,
+                                   'minimumForOptimizer': 1e-08,
+                                   'maximumForOptimizer': 0.01},
+                           'fit_intercept': {'description': 'Specifies whether a constant (bias or intercept) should '
+                                                            'be added to the decision function.',
+                                             'type': 'boolean',
+                                             'default': True},
+                           'intercept_scaling': {'description': "Useful only when the solver 'liblinear' is used\n"
+                                                                'and self.fit_intercept is set to True. In this case, '
+                                                                'X becomes\n'
+                                                                '[X, self.intercept_scaling],\n'
+                                                                'i.e. a "synthetic" feature with constant value equal '
+                                                                'to\n'
+                                                                'intercept_scaling is appended to the instance '
+                                                                'vector.\n'
+                                                                'The intercept becomes "intercept_scaling * '
+                                                                'synthetic_feature_weight".\n'
+                                                                'Note! the synthetic feature weight is subject to '
+                                                                'l1/l2 regularization\n'
+                                                                'as all other features.\n'
+                                                                'To lessen the effect of regularization on synthetic '
+                                                                'feature weight\n'
+                                                                '(and therefore on the intercept) intercept_scaling '
+                                                                'has to be increased.',
+                                                 'type': 'number',
+                                                 'distribution': 'uniform',
+                                                 'minimum': 0.0,
+                                                 'maximum': 1.0,
+                                                 'default': 1.0},
+                           'class_weight': {'anyOf': [{'description': 'By default, all classes have weight 1.',
+                                                       'enum': [None]},
+                                                      {'description': 'Uses the values of y to automatically adjust '
+                                                                      'weights inversely\n'
+                                                                      'proportional to class frequencies in the input '
+                                                                      'data as "n_samples / (n_classes * '
+                                                                      'np.bincount(y))".',
+                                                       'enum': ['balanced']},
+                                                      {'description': 'Weights associated with classes in the form '
+                                                                      '"{class_label: weight}".',
+                                                       'type': 'object',
+                                                       'additionalProperties': {'type': 'number'},
+                                                       'forOptimizer': False}],
+                                            'default': None},
+                           'random_state': {'description': 'Seed of pseudo-random number generator for shuffling data '
+                                                           'when solver == ‘sag’, ‘saga’ or ‘liblinear’.',
+                                            'anyOf': [{'description': 'RandomState used by np.random', 'enum': [None]},
+                                                      {'description': 'Use the provided random state, only affecting '
+                                                                      'other users of that same random state instance.',
+                                                       'laleType': 'numpy.random.RandomState'},
+                                                      {'description': 'Explicit seed.', 'type': 'integer'}],
+                                            'default': None},
+                           'max_iter': {'description': 'Maximum number of iterations for solvers to converge.',
+                                        'type': 'integer',
+                                        'distribution': 'uniform',
+                                        'minimum': 1,
+                                        'minimumForOptimizer': 10,
+                                        'maximumForOptimizer': 1000,
+                                        'default': 100},
+                           'multi_class': {'default': 'auto',
+                                           'description': 'If the option chosen is `ovr`, then a binary problem is fit '
+                                                          'for each label. For `multinomial` the loss minimised is the '
+                                                          'multinomial loss fit across the entire probability '
+                                                          'distribution, even when the data is binary. `multinomial` '
+                                                          'is unavailable when solver=`liblinear`. `auto` selects '
+                                                          '`ovr` if the data is binary, or if solver=`liblinear`, and '
+                                                          'otherwise selects `multinomial`.',
+                                           'enum': ['auto', 'ovr', 'multinomial']},
+                           'verbose': {'description': 'For the liblinear and lbfgs solvers set verbose to any positive '
+                                                      'number for verbosity.',
+                                       'type': 'integer',
+                                       'default': 0},
+                           'warm_start': {'description': 'When set to True, reuse the solution of the previous call to '
+                                                         'fit as initialization, otherwise, just erase the previous '
+                                                         'solution.\n'
+                                                         'Useless for liblinear solver.',
+                                          'type': 'boolean',
+                                          'default': False},
+                           'n_jobs': {'description': 'Number of CPU cores when parallelizing over classes if\n'
+                                                     'multi_class is ovr.  This parameter is ignored when the "solver" '
+                                                     'is\n'
+                                                     "set to 'liblinear' regardless of whether 'multi_class' is "
+                                                     'specified or\n'
+                                                     'not.',
+                                      'anyOf': [{'description': '1 unless in joblib.parallel_backend context.',
+                                                 'enum': [None]},
+                                                {'description': 'Use all processors.', 'enum': [-1]},
+                                                {'description': 'Number of CPU cores.',
+                                                 'type': 'integer',
+                                                 'minimum': 1}],
+                                      'default': None},
+                           'l1_ratio': {'default': None,
+                                        'description': 'The Elastic-Net mixing parameter.',
+                                        'anyOf': [{'type': 'number', 'minimum': 0.0, 'maximum': 1.0},
+                                                  {'enum': [None]}]}}},
+           {'description': 'The newton-cg, sag, and lbfgs solvers support only l2 or no penalties.',
+            'anyOf': [{'type': 'object', 'properties': {'solver': {'not': {'enum': ['newton-cg', 'sag', 'lbfgs']}}}},
+                      {'type': 'object', 'properties': {'penalty': {'enum': ['l2', 'none']}}}]},
+           {'description': 'The dual formulation is only implemented for l2 penalty with the liblinear solver.',
+            'anyOf': [{'type': 'object', 'properties': {'dual': {'enum': [False]}}},
+                      {'type': 'object',
+                       'properties': {'penalty': {'enum': ['l2']}, 'solver': {'enum': ['liblinear']}}}]},
+           {'description': 'The multi_class multinomial option is unavailable when the solver is liblinear.',
+            'anyOf': [{'type': 'object', 'properties': {'multi_class': {'not': {'enum': ['multinomial']}}}},
+                      {'type': 'object', 'properties': {'solver': {'not': {'enum': ['liblinear']}}}}]}]}

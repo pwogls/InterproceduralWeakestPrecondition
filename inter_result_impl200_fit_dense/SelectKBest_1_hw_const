@@ -1,0 +1,17 @@
+{'description': 'Select features according to the k highest scores.',
+ 'allOf': [{'type': 'object',
+            'required': ['score_func', 'k'],
+            'relevantToOptimizer': ['k'],
+            'additionalProperties': False,
+            'properties': {'score_func': {'laleType': 'callable',
+                                          'default': <function f_classif at 0x000001705E65A940>,
+                                          'description': 'Function taking two arrays X and y, and returning a pair of '
+                                                         'arrays (scores, pvalues) or a single array with scores.'},
+                           'k': {'anyOf': [{'type': 'integer',
+                                            'minimum': 1,
+                                            'minimumForOptimizer': 2,
+                                            'laleMaximum': 'X/items/maxItems',
+                                            'maximumForOptimizer': 15},
+                                           {'enum': ['all']}],
+                                 'default': 10,
+                                 'description': 'Number of top features to select'}}}]}

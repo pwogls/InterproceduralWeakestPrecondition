@@ -1,0 +1,20 @@
+{'description': 'Prediction voting regressor for unfitted estimators.',
+ 'allOf': [{'type': 'object',
+            'required': ['estimators', 'weights', 'n_jobs'],
+            'relevantToOptimizer': ['weights'],
+            'additionalProperties': False,
+            'properties': {'estimators': {'type': 'array',
+                                          'items': {'type': 'array',
+                                                    'laleType': 'tuple',
+                                                    'items': [{'type': 'string'},
+                                                              {'anyOf': [{'laleType': 'operator'},
+                                                                         {'enum': ['drop']}]}]},
+                                          'description': 'List of (string, estimator) tuples. Invoking the ``fit`` '
+                                                         'method on the ``VotingClassifier`` will fit clones.'},
+                           'weights': {'anyOf': [{'type': 'array', 'items': {'type': 'number'}}, {'enum': [None]}],
+                                       'default': None,
+                                       'description': 'Sequence of weights (`float` or `int`) to weight the '
+                                                      'occurrences of'},
+                           'n_jobs': {'anyOf': [{'type': 'integer'}, {'enum': [None]}],
+                                      'default': None,
+                                      'description': 'The number of jobs to run in parallel for ``fit``.'}}}]}

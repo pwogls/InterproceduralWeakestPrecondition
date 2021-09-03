@@ -1,0 +1,88 @@
+>>> PassiveAggressiveClassifier  ( classifier )
+1000 trials: 948 passed, 52 failed.
++---------------------+----------------+-----------------+----------------+-----------------+--------------------+---------------------+
+|        name         | true_positives | false_positives | true_negatives | false_negatives |     precision      |       recall        |
++---------------------+----------------+-----------------+----------------+-----------------+--------------------+---------------------+
+|  handwritten_(0/0)  |      948       |       52        |       0        |        0        |       0.948        |         1.0         |
+|  docstrings_(1/2)   |      428       |       52        |       0        |       520       | 0.8916666666666667 | 0.45147679324894513 |
+| WPanalysis_(21/103) |      948       |       52        |       0        |        0        |       0.948        |         1.0         |
++---------------------+----------------+-----------------+----------------+-----------------+--------------------+---------------------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 103 total, 21 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['C', 'average', 'early_stopping', 'fit_intercept', 'loss', 'max_iter', 'n_iter_no_change', 'shuffle', 'tol', 'validation_fraction', 'warm_start', 'verbose', 'n_jobs', 'random_state', 'class_weight']
+
+> relevantToOptimizer:
+ ['C', 'average', 'early_stopping', 'fit_intercept', 'loss', 'max_iter', 'n_iter', 'n_iter_no_change', 'shuffle', 'tol', 'validation_fraction', 'warm_start']
+
+> handwritten
+False Positives (52):
+	(14) The train_size = 1 should be greater or equal to the number of classes = 3
+	(11) The test_size = 1 should be greater or equal to the number of classes = 3
+	(11) The train_size = 2 should be greater or equal to the number of classes = 3
+	(7) The test_size = 2 should be greater or equal to the number of classes = 3
+	(1) With n_samples=52, test_size=0.9878715349403546 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9971419365080825 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9901004323214014 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9924806381827201 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9909899738726553 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9927087650807347 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9938284847194944 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9828544544973485 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9992770759260455 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (0):
+
+> docstring
+False Positives (52):
+	(14) The train_size = 1 should be greater or equal to the number of classes = 3
+	(11) The test_size = 1 should be greater or equal to the number of classes = 3
+	(11) The train_size = 2 should be greater or equal to the number of classes = 3
+	(7) The test_size = 2 should be greater or equal to the number of classes = 3
+	(1) With n_samples=52, test_size=0.9878715349403546 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9971419365080825 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9901004323214014 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9924806381827201 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9909899738726553 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9927087650807347 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9938284847194944 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9828544544973485 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9992770759260455 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (0):
+
+> WPanalysis
+False Positives (52):
+	(14) The train_size = 1 should be greater or equal to the number of classes = 3
+	(11) The test_size = 1 should be greater or equal to the number of classes = 3
+	(11) The train_size = 2 should be greater or equal to the number of classes = 3
+	(7) The test_size = 2 should be greater or equal to the number of classes = 3
+	(1) With n_samples=52, test_size=0.9878715349403546 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9971419365080825 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9901004323214014 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9924806381827201 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9909899738726553 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9927087650807347 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9938284847194944 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9828544544973485 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=52, test_size=0.9992770759260455 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'C': 0, 'average': 0, 'early_stopping': 0, 'fit_intercept': 0, 'loss': 0, 'max_iter': 0, 'n_iter_no_change': 0, 'shuffle': 0, 'tol': 0, 'validation_fraction': 0, 'warm_start': 0, 'verbose': 0, 'n_jobs': 0, 'random_state': 0, 'class_weight': 0}
+docstring: 
+ {'C': 0, 'average': 0, 'early_stopping': 0, 'fit_intercept': 0, 'loss': 0, 'max_iter': 0, 'n_iter_no_change': 0, 'shuffle': 0, 'tol': 0, 'validation_fraction': 0, 'warm_start': 0, 'verbose': 0, 'n_jobs': 0, 'random_state': 0, 'class_weight': 0}
+WPanalysis: 
+ {'C': 0, 'average': 0, 'early_stopping': 0, 'fit_intercept': 0, 'loss': 0, 'max_iter': 0, 'n_iter_no_change': 0, 'shuffle': 0, 'tol': 0, 'validation_fraction': 0, 'warm_start': 0, 'verbose': 0, 'n_jobs': 0, 'random_state': 0, 'class_weight': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+freq = 520
+{'description': 'validation_fraction, only used if early_stopping is true',
+ 'anyOf': [{'type': 'object', 'properties': {'validation_fraction': {'enum': [0.1]}}},
+           {'type': 'object', 'properties': {'early_stopping': {'enum': [True]}}}]}
+
+WPanalysis:

@@ -1,0 +1,44 @@
+>>> NMF  ( transformer )
+1000 trials: 719 passed, 281 failed.
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------------------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives |     precision      |       recall       |
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------------------+
+| handwritten_(1/1)  |      719       |       281       |       0        |        0        |       0.719        |        1.0         |
+|  docstrings_(1/1)  |      719       |       281       |       0        |        0        |       0.719        |        1.0         |
+| WPanalysis_(10/80) |      542       |       281       |       0        |       177       | 0.6585662211421628 | 0.7538247566063978 |
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------------------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 80 total, 10 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['alpha', 'beta_loss', 'l1_ratio', 'max_iter', 'n_components', 'shuffle', 'solver', 'tol', 'init', 'random_state', 'verbose', 'regularization']
+
+> relevantToOptimizer:
+ ['alpha', 'beta_loss', 'l1_ratio', 'max_iter', 'n_components', 'shuffle', 'solver', 'tol']
+
+> handwritten
+False Positives (281):
+	(281) When beta_loss <= 0 and X contains zeros, the solver may diverge. Please add small values to X, or use a positive beta_loss.
+True Negatives (0):
+
+> docstring
+False Positives (281):
+	(281) When beta_loss <= 0 and X contains zeros, the solver may diverge. Please add small values to X, or use a positive beta_loss.
+True Negatives (0):
+
+> WPanalysis
+False Positives (281):
+	(281) When beta_loss <= 0 and X contains zeros, the solver may diverge. Please add small values to X, or use a positive beta_loss.
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:
+freq = 177
+{'anyOf': [{'type': 'object', 'properties': {'init': {'enum': ['custom']}}},
+           {'type': 'object', 'properties': {'solver': {'not': {'enum': ['cd']}}}},
+           {'type': 'object', 'not': {}}]}

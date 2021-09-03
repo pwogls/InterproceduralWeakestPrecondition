@@ -1,0 +1,89 @@
+>>> SGDClassifier  ( classifier )
+1000 trials: 985 passed, 15 failed.
++---------------------+----------------+-----------------+----------------+-----------------+--------------------+---------------------+
+|        name         | true_positives | false_positives | true_negatives | false_negatives |     precision      |       recall        |
++---------------------+----------------+-----------------+----------------+-----------------+--------------------+---------------------+
+|  handwritten_(1/1)  |      985       |       15        |       0        |        0        |       0.985        |         1.0         |
+|  docstrings_(2/3)   |      178       |        5        |       10       |       807       | 0.9726775956284153 | 0.18071065989847715 |
+| WPanalysis_(13/101) |      985       |       15        |       0        |        0        |       0.985        |         1.0         |
++---------------------+----------------+-----------------+----------------+-----------------+--------------------+---------------------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 101 total, 13 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['alpha', 'average', 'early_stopping', 'epsilon', 'eta0', 'fit_intercept', 'l1_ratio', 'learning_rate', 'loss', 'max_iter', 'n_iter_no_change', 'penalty', 'power_t', 'shuffle', 'tol', 'validation_fraction', 'warm_start', 'verbose', 'n_jobs', 'random_state', 'class_weight']
+
+> relevantToOptimizer:
+ ['alpha', 'average', 'early_stopping', 'epsilon', 'eta0', 'fit_intercept', 'l1_ratio', 'learning_rate', 'loss', 'max_iter', 'n_iter_no_change', 'penalty', 'power_t', 'shuffle', 'tol', 'validation_fraction', 'warm_start']
+
+> handwritten
+False Positives (15):
+	(2) The test_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 9 should be greater or equal to the number of classes = 10
+	(1) The test_size = 5 should be greater or equal to the number of classes = 10
+	(1) The test_size = 8 should be greater or equal to the number of classes = 10
+	(1) The train_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 4 should be greater or equal to the number of classes = 10
+	(1) The train_size = 6 should be greater or equal to the number of classes = 10
+	(1) The train_size = 4 should be greater or equal to the number of classes = 10
+	(1) The train_size = 5 should be greater or equal to the number of classes = 10
+	(1) The train_size = 8 should be greater or equal to the number of classes = 10
+	(1) The train_size = 9 should be greater or equal to the number of classes = 10
+	(1) The train_size = 7 should be greater or equal to the number of classes = 10
+	(1) The train_size = 3 should be greater or equal to the number of classes = 10
+	(1) The test_size = 7 should be greater or equal to the number of classes = 10
+True Negatives (0):
+
+> docstring
+False Positives (5):
+	(1) The test_size = 5 should be greater or equal to the number of classes = 10
+	(1) The train_size = 1 should be greater or equal to the number of classes = 10
+	(1) The train_size = 4 should be greater or equal to the number of classes = 10
+	(1) The test_size = 1 should be greater or equal to the number of classes = 10
+	(1) The train_size = 9 should be greater or equal to the number of classes = 10
+True Negatives (10):
+	(1) The test_size = 9 should be greater or equal to the number of classes = 10
+	(1) The test_size = 8 should be greater or equal to the number of classes = 10
+	(1) The test_size = 4 should be greater or equal to the number of classes = 10
+	(1) The train_size = 6 should be greater or equal to the number of classes = 10
+	(1) The train_size = 5 should be greater or equal to the number of classes = 10
+	(1) The train_size = 8 should be greater or equal to the number of classes = 10
+	(1) The train_size = 7 should be greater or equal to the number of classes = 10
+	(1) The train_size = 3 should be greater or equal to the number of classes = 10
+	(1) The test_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 7 should be greater or equal to the number of classes = 10
+
+> WPanalysis
+False Positives (15):
+	(2) The test_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 9 should be greater or equal to the number of classes = 10
+	(1) The test_size = 5 should be greater or equal to the number of classes = 10
+	(1) The test_size = 8 should be greater or equal to the number of classes = 10
+	(1) The train_size = 1 should be greater or equal to the number of classes = 10
+	(1) The test_size = 4 should be greater or equal to the number of classes = 10
+	(1) The train_size = 6 should be greater or equal to the number of classes = 10
+	(1) The train_size = 4 should be greater or equal to the number of classes = 10
+	(1) The train_size = 5 should be greater or equal to the number of classes = 10
+	(1) The train_size = 8 should be greater or equal to the number of classes = 10
+	(1) The train_size = 9 should be greater or equal to the number of classes = 10
+	(1) The train_size = 7 should be greater or equal to the number of classes = 10
+	(1) The train_size = 3 should be greater or equal to the number of classes = 10
+	(1) The test_size = 7 should be greater or equal to the number of classes = 10
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+freq = 650
+{'description': "epsilon, only if loss is 'huber', 'epsilon_insensitive', or 'squared_epsilon_insensitive'",
+ 'anyOf': [{'type': 'object', 'properties': {'epsilon': {'enum': [0.1]}}},
+           {'type': 'object',
+            'properties': {'loss': {'enum': ['huber', 'epsilon_insensitive', 'squared_epsilon_insensitive']}}}]}
+freq = 167
+{'description': 'validation_fraction, only used if early_stopping is true',
+ 'anyOf': [{'type': 'object', 'properties': {'validation_fraction': {'enum': [0.1]}}},
+           {'type': 'object', 'properties': {'early_stopping': {'enum': [True]}}}]}
+
+WPanalysis:

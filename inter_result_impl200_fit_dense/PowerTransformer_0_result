@@ -1,0 +1,45 @@
+>>> PowerTransformer  ( transformer )
+1000 trials: 1000 passed, 0 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/1)  |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+| WPanalysis_(2/12) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 12 total, 2 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['method', 'standardize', 'copy']
+
+> relevantToOptimizer:
+ ['method', 'standardize']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (0):
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'method': 0, 'standardize': 0, 'copy': 0}
+docstring: 
+ {'method': 0, 'standardize': 0, 'copy': 0}
+WPanalysis: 
+ {'method': 0, 'standardize': 0, 'copy': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

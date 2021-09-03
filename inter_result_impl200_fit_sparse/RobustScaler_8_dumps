@@ -1,0 +1,18 @@
+[501,
+ 499,
+ ['handwritten_(0/0)', 501, 499, 0, 0, 0.501, 1.0],
+ ['docstrings_(0/0)', 501, 499, 0, 0, 0.501, 1.0],
+ ['WPanalysis_(1/11)', 501, 0, 499, 0, 1.0, 1.0],
+ ['copy', 'quantile_range', 'with_centering', 'with_scaling', 'unit_variance'],
+ {'copy': 0, 'quantile_range': 0, 'with_centering': 0, 'with_scaling': 0, 'unit_variance': 0},
+ {'copy': 0, 'quantile_range': 0, 'with_centering': 0, 'with_scaling': 0, 'unit_variance': 0},
+ {'copy': 0, 'quantile_range': 0, 'with_centering': 0, 'with_scaling': 0, 'unit_variance': 0},
+ [],
+ {},
+ [],
+ {},
+ [{'description': "From /preprocessing/_data.py:RobustScaler:fit, Exception: raise ValueError(     'Cannot center "
+                  'sparse matrices: use `with_centering=False` instead. See docstring for motivation and '
+                  "alternatives.'     ) ",
+   'anyOf': [{'type': 'object', 'properties': {'with_centering': {'enum': [False]}}}, {'type': 'object', 'not': {}}]}],
+ {'0': 499}]

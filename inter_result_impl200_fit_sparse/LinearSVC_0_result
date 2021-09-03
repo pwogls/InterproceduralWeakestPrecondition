@@ -1,0 +1,86 @@
+>>> LinearSVC  ( classifier )
+1000 trials: 758 passed, 242 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------------------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision |       recall       |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------------------+
+| handwritten_(3/3) |      512       |        0        |      242       |       246       |    1.0    | 0.6754617414248021 |
+| docstrings_(0/0)  |      758       |       242       |       0        |        0        |   0.758   |        1.0         |
+| WPanalysis_(7/65) |      758       |        0        |      242       |        0        |    1.0    |        1.0         |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------------------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 65 total, 7 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['C', 'dual', 'fit_intercept', 'intercept_scaling', 'loss', 'max_iter', 'multi_class', 'penalty', 'tol', 'class_weight', 'verbose', 'random_state']
+
+> relevantToOptimizer:
+ ['C', 'dual', 'fit_intercept', 'intercept_scaling', 'loss', 'max_iter', 'multi_class', 'penalty', 'tol']
+
+> handwritten
+False Positives (0):
+True Negatives (242):
+	(66) Unsupported set of arguments: The combination of penalty='l1' and loss='squared_hinge' are not supported when dual=True, Parameters: penalty='l1', loss='squared_hinge', dual=True
+	(61) Unsupported set of arguments: The combination of penalty='l1' and loss='hinge' is not supported, Parameters: penalty='l1', loss='hinge', dual=True
+	(60) Unsupported set of arguments: The combination of penalty='l1' and loss='hinge' is not supported, Parameters: penalty='l1', loss='hinge', dual=False
+	(55) Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+
+> docstring
+False Positives (242):
+	(66) Unsupported set of arguments: The combination of penalty='l1' and loss='squared_hinge' are not supported when dual=True, Parameters: penalty='l1', loss='squared_hinge', dual=True
+	(61) Unsupported set of arguments: The combination of penalty='l1' and loss='hinge' is not supported, Parameters: penalty='l1', loss='hinge', dual=True
+	(60) Unsupported set of arguments: The combination of penalty='l1' and loss='hinge' is not supported, Parameters: penalty='l1', loss='hinge', dual=False
+	(55) Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (242):
+	(66) Unsupported set of arguments: The combination of penalty='l1' and loss='squared_hinge' are not supported when dual=True, Parameters: penalty='l1', loss='squared_hinge', dual=True
+	(61) Unsupported set of arguments: The combination of penalty='l1' and loss='hinge' is not supported, Parameters: penalty='l1', loss='hinge', dual=True
+	(60) Unsupported set of arguments: The combination of penalty='l1' and loss='hinge' is not supported, Parameters: penalty='l1', loss='hinge', dual=False
+	(55) Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+
+> Failed constraints stats:
+handwritten:
+freq = 252
+{'description': 'The combination of penalty=`l1` and loss=`hinge` is not supported',
+ 'anyOf': [{'type': 'object', 'properties': {'penalty': {'enum': ['l2']}}},
+           {'type': 'object', 'properties': {'loss': {'enum': ['squared_hinge']}}}]}
+freq = 114
+{'description': 'The combination of penalty=`l2` and loss=`hinge` is not supported when dual=False.',
+ 'anyOf': [{'type': 'object', 'properties': {'penalty': {'enum': ['l1']}}},
+           {'type': 'object', 'properties': {'loss': {'enum': ['squared_hinge']}}},
+           {'type': 'object', 'properties': {'dual': {'enum': [True]}}}]}
+freq = 122
+{'description': 'The combination of penalty=`l1` and loss=`squared_hinge` is not supported when dual=True.',
+ 'anyOf': [{'type': 'object', 'properties': {'penalty': {'enum': ['l2']}}},
+           {'type': 'object', 'properties': {'loss': {'enum': ['hinge']}}},
+           {'type': 'object', 'properties': {'dual': {'enum': [False]}}}]}
+
+docstring:
+
+WPanalysis:
+freq = 242
+{'description': "From /svm/_base.py:None:_get_liblinear_solver_type, Exception: raise ValueError(     'Unsupported set "
+                "of arguments: %s, Parameters: penalty=%r, loss=%r, dual=%r'      % (error_string, penalty, loss, "
+                'dual)) ',
+ 'anyOf': [{'allOf': [{'type': 'object', 'properties': {'loss': {'enum': ['logistic_regression']}}},
+                      {'type': 'object', 'properties': {'penalty': {'enum': ['l1']}}},
+                      {'type': 'object', 'properties': {'dual': {'enum': [False]}}}]},
+           {'allOf': [{'type': 'object', 'properties': {'loss': {'enum': ['logistic_regression']}}},
+                      {'type': 'object', 'properties': {'penalty': {'enum': ['l2']}}}]},
+           {'allOf': [{'type': 'object', 'properties': {'loss': {'enum': ['hinge']}}},
+                      {'type': 'object', 'properties': {'penalty': {'enum': ['l2']}}},
+                      {'type': 'object', 'properties': {'dual': {'enum': [True]}}}]},
+           {'allOf': [{'type': 'object', 'properties': {'loss': {'enum': ['squared_hinge']}}},
+                      {'type': 'object', 'properties': {'penalty': {'enum': ['l1']}}},
+                      {'type': 'object', 'properties': {'dual': {'enum': [False]}}}]},
+           {'allOf': [{'type': 'object', 'properties': {'loss': {'enum': ['squared_hinge']}}},
+                      {'type': 'object', 'properties': {'penalty': {'enum': ['l2']}}}]},
+           {'allOf': [{'type': 'object', 'properties': {'loss': {'enum': ['epsilon_insensitive']}}},
+                      {'type': 'object', 'properties': {'penalty': {'enum': ['l2']}}},
+                      {'type': 'object', 'properties': {'dual': {'enum': [True]}}}]},
+           {'allOf': [{'type': 'object', 'properties': {'loss': {'enum': ['squared_epsilon_insensitive']}}},
+                      {'type': 'object', 'properties': {'penalty': {'enum': ['l2']}}}]},
+           {'type': 'object', 'properties': {'multi_class': {'enum': ['crammer_singer']}}}]}

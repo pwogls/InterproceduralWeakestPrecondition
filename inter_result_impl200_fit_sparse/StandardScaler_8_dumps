@@ -1,0 +1,20 @@
+[501,
+ 499,
+ ['handwritten_(1/1)', 501, 0, 499, 0, 1.0, 1.0],
+ ['docstrings_(0/0)', 501, 499, 0, 0, 0.501, 1.0],
+ ['WPanalysis_(2/50)', 501, 0, 499, 0, 1.0, 1.0],
+ ['copy', 'with_mean', 'with_std'],
+ {'copy': 0, 'with_mean': 0, 'with_std': 0},
+ {'copy': 0, 'with_mean': 0, 'with_std': 0},
+ {'copy': 0, 'with_mean': 0, 'with_std': 0},
+ [{'description': 'Setting `with_mean` to True does not work on sparse matrices, because centering them entails '
+                  'building a dense matrix which in common use cases is likely to be too large to fit in memory.',
+   'anyOf': [{'type': 'object', 'properties': {'with_mean': {'enum': [False]}}}, {'type': 'object', 'not': {}}]}],
+ {'0': 499},
+ [],
+ {},
+ [{'description': "From /preprocessing/_data.py:StandardScaler:partial_fit, Exception: raise ValueError(     'Cannot "
+                  'center sparse matrices: pass `with_mean=False` instead. See docstring for motivation and '
+                  "alternatives.'     ) ",
+   'anyOf': [{'type': 'object', 'not': {}}, {'type': 'object', 'properties': {'with_mean': {'enum': [False]}}}]}],
+ {'0': 499}]

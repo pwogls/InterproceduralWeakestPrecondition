@@ -1,0 +1,45 @@
+>>> SimpleImputer  ( transformer )
+1000 trials: 1000 passed, 0 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+| docstrings_(0/1)  |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+| WPanalysis_(2/13) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 13 total, 2 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['copy', 'strategy', 'missing_values', 'fill_value', 'verbose', 'add_indicator']
+
+> relevantToOptimizer:
+ ['copy', 'strategy']
+
+> handwritten
+False Positives (0):
+True Negatives (0):
+
+> docstring
+False Positives (0):
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'copy': 0, 'strategy': 0, 'missing_values': 0, 'fill_value': 0, 'verbose': 0, 'add_indicator': 0}
+docstring: 
+ {'copy': 0, 'strategy': 0, 'missing_values': 0, 'fill_value': 0, 'verbose': 0, 'add_indicator': 0}
+WPanalysis: 
+ {'copy': 0, 'strategy': 0, 'missing_values': 0, 'fill_value': 0, 'verbose': 0, 'add_indicator': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

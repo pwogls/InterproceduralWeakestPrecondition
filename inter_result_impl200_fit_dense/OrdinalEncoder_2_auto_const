@@ -1,0 +1,50 @@
+{'allOf': [{'type': 'object',
+            'additionalProperties': False,
+            'required': ['categories', 'dtype'],
+            'relevantToOptimizer': ['handle_unknown'],
+            'properties': {'categories': {'anyOf': [{'description': 'Determine categories automatically from training '
+                                                                    'data.',
+                                                     'enum': ['auto', None]},
+                                                    {'description': 'The ith list element holds the categories '
+                                                                    'expected in the ith column.',
+                                                     'type': 'array',
+                                                     'items': {'anyOf': [{'type': 'array', 'items': {'type': 'string'}},
+                                                                         {'type': 'array',
+                                                                          'items': {'type': 'number'},
+                                                                          'description': 'Should be sorted.'}]}}],
+                                          'default': 'auto'},
+                           'dtype': {'description': 'Desired dtype of output, must be number. See '
+                                                    'https://docs.scipy.org/doc/numpy-1.14.0/reference/arrays.scalars.html#arrays-scalars-built-in',
+                                     'laleType': 'Any',
+                                     'default': 'float64'},
+                           'handle_unknown': {'default': 'error',
+                                              'description': 'When set to ‘error’ an error will be raised in case an '
+                                                             'unknown categorical feature is present during '
+                                                             'transform.\n'
+                                                             'When set to ‘use_encoded_value’, the encoded value of '
+                                                             'unknown categories will be set to the value given for '
+                                                             'the parameter unknown_value.\n'
+                                                             'In inverse_transform, an unknown category will be '
+                                                             'denoted as None.\n'
+                                                             'When this parameter is set to `ignore` and an unknown '
+                                                             'category is encountered during transform,\n'
+                                                             'the resulting encoding with be set to the value '
+                                                             'indicated by `encode_unknown_with` (this functionality '
+                                                             'is added by lale).\n',
+                                              'enum': ['error', 'ignore', 'use_encoded_value']},
+                           'encode_unknown_with': {'description': 'When an unknown categorical feature value is found '
+                                                                  "during transform, and 'handle_unknown' is\n"
+                                                                  "set to 'ignore', that value is encoded with this "
+                                                                  "value. Default of 'auto' sets it to an integer "
+                                                                  'equal to n+1, where\n'
+                                                                  'n is the maximum encoding value based on known '
+                                                                  'categories.',
+                                                   'anyOf': [{'type': 'integer'}, {'enum': ['auto']}],
+                                                   'default': 'auto'},
+                           'unknown_value': {'default': None,
+                                             'description': 'When the parameter handle_unknown is set to '
+                                                            '‘use_encoded_value’, this parameter is required and will '
+                                                            'set the encoded value of unknown categories.\n'
+                                                            'It has to be distinct from the values used to encode any '
+                                                            'of the categories in fit.\n',
+                                             'anyOf': [{'type': 'integer'}, {'enum': [nan]}, {'enum': [None]}]}}}]}

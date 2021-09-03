@@ -1,0 +1,53 @@
+>>> OrdinalEncoder  ( transformer )
+1000 trials: 327 passed, 673 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0) |      327       |       673       |       0        |        0        |   0.327   |  1.0   |
+| docstrings_(0/0)  |      327       |       673       |       0        |        0        |   0.327   |  1.0   |
+| WPanalysis_(2/35) |       0        |       673       |       0        |       327       |    0.0    |  0.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 35 total, 2 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['handle_unknown', 'categories', 'dtype', 'encode_unknown_with', 'unknown_value']
+
+> relevantToOptimizer:
+ ['handle_unknown']
+
+> handwritten
+False Positives (673):
+	(350) unknown_value should be an integer or np.nan when handle_unknown is 'use_encoded_value', got None.
+	(323) Found unknown categories [4.8, 5.0, 6.0, 7.6, 7.7] in column 0 during transform
+True Negatives (0):
+
+> docstring
+False Positives (673):
+	(350) unknown_value should be an integer or np.nan when handle_unknown is 'use_encoded_value', got None.
+	(323) Found unknown categories [4.8, 5.0, 6.0, 7.6, 7.7] in column 0 during transform
+True Negatives (0):
+
+> WPanalysis
+False Positives (673):
+	(350) unknown_value should be an integer or np.nan when handle_unknown is 'use_encoded_value', got None.
+	(323) Found unknown categories [4.8, 5.0, 6.0, 7.6, 7.7] in column 0 during transform
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'handle_unknown': 0, 'categories': 0, 'dtype': 0, 'encode_unknown_with': 0, 'unknown_value': 0}
+docstring: 
+ {'handle_unknown': 0, 'categories': 0, 'dtype': 0, 'encode_unknown_with': 0, 'unknown_value': 0}
+WPanalysis: 
+ {'handle_unknown': 0, 'categories': 0, 'dtype': 0, 'encode_unknown_with': 0, 'unknown_value': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:
+freq = 327
+{'enum': ['error', 'use_encoded_value']}

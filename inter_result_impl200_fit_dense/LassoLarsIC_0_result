@@ -1,0 +1,45 @@
+>>> LassoLarsIC  ( regression )
+1000 trials: 1000 passed, 0 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/1)  |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+| WPanalysis_(8/43) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 43 total, 8 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['copy_X', 'criterion', 'eps', 'fit_intercept', 'max_iter', 'normalize', 'positive', 'precompute', 'verbose']
+
+> relevantToOptimizer:
+ ['criterion', 'fit_intercept', 'normalize', 'precompute', 'max_iter', 'eps', 'copy_X', 'positive']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (0):
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'copy_X': 0, 'criterion': 0, 'eps': 0, 'fit_intercept': 0, 'max_iter': 0, 'normalize': 0, 'positive': 0, 'precompute': 0, 'verbose': 0}
+docstring: 
+ {'copy_X': 0, 'criterion': 0, 'eps': 0, 'fit_intercept': 0, 'max_iter': 0, 'normalize': 0, 'positive': 0, 'precompute': 0, 'verbose': 0}
+WPanalysis: 
+ {'copy_X': 0, 'criterion': 0, 'eps': 0, 'fit_intercept': 0, 'max_iter': 0, 'normalize': 0, 'positive': 0, 'precompute': 0, 'verbose': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

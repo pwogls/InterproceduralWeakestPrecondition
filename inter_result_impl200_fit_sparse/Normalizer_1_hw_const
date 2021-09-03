@@ -1,0 +1,12 @@
+{'description': 'Normalize samples individually to unit norm.',
+ 'allOf': [{'type': 'object',
+            'required': ['norm'],
+            'relevantToOptimizer': ['norm'],
+            'additionalProperties': False,
+            'properties': {'norm': {'enum': ['l1', 'l2', 'max'],
+                                    'default': 'l2',
+                                    'description': 'The norm to use to normalize each non zero sample.'},
+                           'copy': {'type': 'boolean',
+                                    'default': True,
+                                    'description': 'Set to False to perform inplace row normalization and avoid a '
+                                                   'copy.'}}}]}

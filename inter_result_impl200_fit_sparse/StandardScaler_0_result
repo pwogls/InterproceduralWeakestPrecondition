@@ -1,0 +1,49 @@
+>>> StandardScaler  ( transformer )
+1000 trials: 501 passed, 499 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(1/1) |      501       |        0        |      499       |        0        |    1.0    |  1.0   |
+| docstrings_(0/0)  |      501       |       499       |       0        |        0        |   0.501   |  1.0   |
+| WPanalysis_(2/50) |      501       |        0        |      499       |        0        |    1.0    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 50 total, 2 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['copy', 'with_mean', 'with_std']
+
+> relevantToOptimizer:
+ ['copy', 'with_mean', 'with_std']
+
+> handwritten
+False Positives (0):
+True Negatives (499):
+	(499) Cannot center sparse matrices: pass `with_mean=False` instead. See docstring for motivation and alternatives.
+
+> docstring
+False Positives (499):
+	(499) Cannot center sparse matrices: pass `with_mean=False` instead. See docstring for motivation and alternatives.
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (499):
+	(499) Cannot center sparse matrices: pass `with_mean=False` instead. See docstring for motivation and alternatives.
+
+> Failed constraints stats:
+handwritten:
+freq = 499
+{'description': 'Setting `with_mean` to True does not work on sparse matrices, because centering them entails building '
+                'a dense matrix which in common use cases is likely to be too large to fit in memory.',
+ 'anyOf': [{'type': 'object', 'properties': {'with_mean': {'enum': [False]}}}, {'type': 'object', 'not': {}}]}
+
+docstring:
+
+WPanalysis:
+freq = 499
+{'description': "From /preprocessing/_data.py:StandardScaler:partial_fit, Exception: raise ValueError(     'Cannot "
+                'center sparse matrices: pass `with_mean=False` instead. See docstring for motivation and '
+                "alternatives.'     ) ",
+ 'anyOf': [{'type': 'object', 'not': {}}, {'type': 'object', 'properties': {'with_mean': {'enum': [False]}}}]}

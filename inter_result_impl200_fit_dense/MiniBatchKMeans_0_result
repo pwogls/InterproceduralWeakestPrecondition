@@ -1,0 +1,45 @@
+>>> MiniBatchKMeans  ( transformer )
+1000 trials: 1000 passed, 0 failed.
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten     |       -        |        -        |       -        |        -        |     -     |   -    |
+|  docstrings_(0/2)  |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+| WPanalysis_(10/92) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 92 total, 10 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['batch_size', 'compute_labels', 'init', 'max_iter', 'max_no_improvement', 'n_clusters', 'n_init', 'tol', 'verbose', 'random_state', 'init_size', 'reassignment_ratio']
+
+> relevantToOptimizer:
+ ['n_clusters', 'init', 'max_iter', 'batch_size', 'compute_labels', 'tol', 'max_no_improvement', 'n_init']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (0):
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'batch_size': 0, 'compute_labels': 0, 'init': 0, 'max_iter': 0, 'max_no_improvement': 0, 'n_clusters': 0, 'n_init': 0, 'tol': 0, 'verbose': 0, 'random_state': 0, 'init_size': 0, 'reassignment_ratio': 0}
+docstring: 
+ {'batch_size': 0, 'compute_labels': 0, 'init': 0, 'max_iter': 0, 'max_no_improvement': 0, 'n_clusters': 0, 'n_init': 0, 'tol': 0, 'verbose': 0, 'random_state': 0, 'init_size': 0, 'reassignment_ratio': 0}
+WPanalysis: 
+ {'batch_size': 0, 'compute_labels': 0, 'init': 0, 'max_iter': 0, 'max_no_improvement': 0, 'n_clusters': 0, 'n_init': 0, 'tol': 0, 'verbose': 0, 'random_state': 0, 'init_size': 0, 'reassignment_ratio': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

@@ -1,0 +1,50 @@
+>>> FeatureAgglomeration  ( transformer )
+1000 trials: 0 passed, 1000 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(3/3) |       0        |       799       |      201       |        0        |    0.0    |  INF   |
+|    docstrings     |       -        |        -        |       -        |        -        |     -     |   -    |
+| WPanalysis_(4/33) |       0        |        0        |      1000      |        0        |    INF    |  INF   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 33 total, 4 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['affinity', 'compute_full_tree', 'linkage', 'n_clusters', 'memory', 'connectivity', 'pooling_func', 'distance_threshold', 'compute_distances']
+
+> relevantToOptimizer:
+ ['affinity', 'compute_full_tree', 'linkage', 'n_clusters']
+
+> handwritten
+False Positives (799):
+	(799) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+True Negatives (201):
+	(201) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+
+> docstring
+False Positives (-):
+True Negatives (-):
+
+> WPanalysis
+False Positives (0):
+True Negatives (1000):
+	(1000) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+
+> Failed constraints stats:
+handwritten:
+freq = 201
+{'description': 'affinity, if linkage is "ward", only "euclidean" is accepted',
+ 'anyOf': [{'type': 'object', 'properties': {'affinity': {'enum': ['euclidean']}}},
+           {'type': 'object', 'properties': {'linkage': {'not': {'enum': ['ward']}}}}]}
+
+docstring:
+
+WPanalysis:
+freq = 1000
+{'description': "From /utils/validation.py:None:_ensure_sparse_format, Exception: raise TypeError(     'A sparse "
+                'matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy '
+                "array.'     ) ",
+ 'type': 'object',
+ 'not': {}}

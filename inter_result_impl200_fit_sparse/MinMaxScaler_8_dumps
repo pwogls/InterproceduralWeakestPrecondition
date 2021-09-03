@@ -1,0 +1,19 @@
+[0,
+ 1000,
+ ['handwritten_(0/0)', 0, 1000, 0, 0, 0.0, 'INF'],
+ ['docstrings_(0/0)', 0, 1000, 0, 0, 0.0, 'INF'],
+ ['WPanalysis_(2/12)', 0, 0, 1000, 0, 'INF', 'INF'],
+ ['copy', 'feature_range', 'clip'],
+ {'copy': 0, 'feature_range': 0, 'clip': 0},
+ {'copy': 0, 'feature_range': 0, 'clip': 0},
+ {'copy': 0, 'feature_range': 0, 'clip': 0},
+ [],
+ {},
+ [],
+ {},
+ [{'description': "From /utils/validation.py:None:_ensure_sparse_format, Exception: raise TypeError(     'A sparse "
+                  'matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy '
+                  "array.'     ) ",
+   'type': 'object',
+   'not': {}}],
+ {'0': 1000}]

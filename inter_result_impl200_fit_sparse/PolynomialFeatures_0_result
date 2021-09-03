@@ -1,0 +1,37 @@
+>>> PolynomialFeatures  ( transformer )
+10 trials: 10 passed, 0 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0) |       10       |        0        |       0        |        0        |    1.0    |  1.0   |
+| docstrings_(0/1)  |       10       |        0        |       0        |        0        |    1.0    |  1.0   |
+| WPanalysis_(0/9)  |       10       |        0        |       0        |        0        |    1.0    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 9 total, 0 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['degree', 'include_bias', 'interaction_only', 'order']
+
+> relevantToOptimizer:
+ ['degree', 'include_bias', 'interaction_only']
+
+> handwritten
+False Positives (0):
+True Negatives (0):
+
+> docstring
+False Positives (0):
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

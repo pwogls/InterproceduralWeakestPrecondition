@@ -1,0 +1,45 @@
+>>> IsolationForest  ( regression )
+1000 trials: 1000 passed, 0 failed.
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0)  |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+|     docstrings     |       -        |        -        |       -        |        -        |     -     |   -    |
+| WPanalysis_(10/85) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 85 total, 10 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['bootstrap', 'max_features', 'max_samples', 'n_estimators', 'contamination', 'n_jobs', 'random_state', 'verbose', 'warm_start']
+
+> relevantToOptimizer:
+ ['n_estimators', 'max_samples', 'max_features', 'bootstrap']
+
+> handwritten
+False Positives (0):
+True Negatives (0):
+
+> docstring
+False Positives (-):
+True Negatives (-):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'bootstrap': 0, 'max_features': 0, 'max_samples': 0, 'n_estimators': 0, 'contamination': 0, 'n_jobs': 0, 'random_state': 0, 'verbose': 0, 'warm_start': 0}
+docstring: 
+ {'bootstrap': 0, 'max_features': 0, 'max_samples': 0, 'n_estimators': 0, 'contamination': 0, 'n_jobs': 0, 'random_state': 0, 'verbose': 0, 'warm_start': 0}
+WPanalysis: 
+ {'bootstrap': 0, 'max_features': 0, 'max_samples': 0, 'n_estimators': 0, 'contamination': 0, 'n_jobs': 0, 'random_state': 0, 'verbose': 0, 'warm_start': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

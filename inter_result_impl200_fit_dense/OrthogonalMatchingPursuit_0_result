@@ -1,0 +1,45 @@
+>>> OrthogonalMatchingPursuit  ( regression )
+1000 trials: 1000 passed, 0 failed.
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten     |       -        |        -        |       -        |        -        |     -     |   -    |
+|  docstrings_(0/0)  |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+| WPanalysis_(4/103) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 103 total, 4 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['fit_intercept', 'normalize', 'precompute', 'tol', 'n_nonzero_coefs']
+
+> relevantToOptimizer:
+ ['tol', 'fit_intercept', 'normalize', 'precompute']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (0):
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'fit_intercept': 0, 'normalize': 0, 'precompute': 0, 'tol': 0, 'n_nonzero_coefs': 0}
+docstring: 
+ {'fit_intercept': 0, 'normalize': 0, 'precompute': 0, 'tol': 0, 'n_nonzero_coefs': 0}
+WPanalysis: 
+ {'fit_intercept': 0, 'normalize': 0, 'precompute': 0, 'tol': 0, 'n_nonzero_coefs': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

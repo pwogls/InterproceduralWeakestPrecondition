@@ -1,0 +1,51 @@
+>>> RadiusNeighborsClassifier  ( classifier )
+1000 trials: 367 passed, 633 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/0)  |      367       |       633       |       0        |        0        |   0.367   |  1.0   |
+| WPanalysis_(1/90) |      367       |       633       |       0        |        0        |   0.367   |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 90 total, 1 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['algorithm', 'leaf_size', 'metric', 'outlier_label', 'p', 'weights', 'radius', 'metric_params', 'n_jobs']
+
+> relevantToOptimizer:
+ ['weights', 'algorithm', 'leaf_size', 'p', 'metric', 'outlier_label']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (633):
+	(263) X should be a square kernel matrix
+	(207) No neighbors found for test samples array([22], dtype=int64), you can try using larger radius, giving a label for outliers, or considering removing them from your dataset.
+	(163) No neighbors found for test samples array([ 4,  9, 22], dtype=int64), you can try using larger radius, giving a label for outliers, or considering removing them from your dataset.
+True Negatives (0):
+
+> WPanalysis
+False Positives (633):
+	(263) X should be a square kernel matrix
+	(207) No neighbors found for test samples array([22], dtype=int64), you can try using larger radius, giving a label for outliers, or considering removing them from your dataset.
+	(163) No neighbors found for test samples array([ 4,  9, 22], dtype=int64), you can try using larger radius, giving a label for outliers, or considering removing them from your dataset.
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'algorithm': 0, 'leaf_size': 0, 'metric': 0, 'outlier_label': 0, 'p': 0, 'weights': 0, 'radius': 0, 'metric_params': 0, 'n_jobs': 0}
+docstring: 
+ {'algorithm': 0, 'leaf_size': 0, 'metric': 0, 'outlier_label': 0, 'p': 0, 'weights': 0, 'radius': 0, 'metric_params': 0, 'n_jobs': 0}
+WPanalysis: 
+ {'algorithm': 0, 'leaf_size': 0, 'metric': 0, 'outlier_label': 0, 'p': 0, 'weights': 0, 'radius': 0, 'metric_params': 0, 'n_jobs': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

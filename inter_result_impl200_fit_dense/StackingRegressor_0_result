@@ -1,0 +1,45 @@
+>>> StackingRegressor  ( regression )
+1000 trials: 1000 passed, 0 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+|    docstrings     |       -        |        -        |       -        |        -        |     -     |   -    |
+| WPanalysis_(1/23) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 23 total, 1 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['estimators', 'cv', 'passthrough', 'final_estimator', 'n_jobs']
+
+> relevantToOptimizer:
+ ['final_estimator', 'cv', 'passthrough']
+
+> handwritten
+False Positives (0):
+True Negatives (0):
+
+> docstring
+False Positives (-):
+True Negatives (-):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'estimators': 0, 'cv': 0, 'passthrough': 0, 'final_estimator': 0, 'n_jobs': 0}
+docstring: 
+ {'estimators': 0, 'cv': 0, 'passthrough': 0, 'final_estimator': 0, 'n_jobs': 0}
+WPanalysis: 
+ {'estimators': 0, 'cv': 0, 'passthrough': 0, 'final_estimator': 0, 'n_jobs': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

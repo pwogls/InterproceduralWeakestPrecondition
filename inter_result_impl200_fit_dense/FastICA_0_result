@@ -1,0 +1,47 @@
+>>> FastICA  ( transformer )
+1000 trials: 942 passed, 58 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/0)  |      942       |       58        |       0        |        0        |   0.942   |  1.0   |
+| WPanalysis_(2/22) |      942       |       58        |       0        |        0        |   0.942   |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 22 total, 2 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['algorithm', 'fun', 'tol', 'whiten', 'n_components', 'fun_args', 'max_iter', 'w_init', 'random_state']
+
+> relevantToOptimizer:
+ ['algorithm', 'whiten', 'fun', 'tol']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (58):
+	(58) array must not contain infs or NaNs
+True Negatives (0):
+
+> WPanalysis
+False Positives (58):
+	(58) array must not contain infs or NaNs
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'algorithm': 0, 'fun': 0, 'tol': 0, 'whiten': 0, 'n_components': 0, 'fun_args': 0, 'max_iter': 0, 'w_init': 0, 'random_state': 0}
+docstring: 
+ {'algorithm': 0, 'fun': 0, 'tol': 0, 'whiten': 0, 'n_components': 0, 'fun_args': 0, 'max_iter': 0, 'w_init': 0, 'random_state': 0}
+WPanalysis: 
+ {'algorithm': 0, 'fun': 0, 'tol': 0, 'whiten': 0, 'n_components': 0, 'fun_args': 0, 'max_iter': 0, 'w_init': 0, 'random_state': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

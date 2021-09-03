@@ -1,0 +1,49 @@
+>>> SGDRegressor  ( regression )
+1000 trials: 999 passed, 1 failed.
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------------------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives |     precision      |       recall       |
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------------------+
+| handwritten_(1/1)  |      999       |        1        |       0        |        0        |       0.999        |        1.0         |
+|  docstrings_(2/3)  |      392       |        1        |       0        |       607       | 0.9974554707379135 | 0.3923923923923924 |
+| WPanalysis_(12/64) |      999       |        1        |       0        |        0        |       0.999        |        1.0         |
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------------------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 64 total, 12 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['alpha', 'average', 'early_stopping', 'epsilon', 'eta0', 'fit_intercept', 'l1_ratio', 'learning_rate', 'loss', 'max_iter', 'n_iter_no_change', 'penalty', 'power_t', 'shuffle', 'tol', 'validation_fraction', 'warm_start', 'verbose', 'random_state']
+
+> relevantToOptimizer:
+ ['alpha', 'average', 'early_stopping', 'epsilon', 'eta0', 'fit_intercept', 'l1_ratio', 'learning_rate', 'loss', 'max_iter', 'n_iter_no_change', 'penalty', 'power_t', 'shuffle', 'tol', 'validation_fraction', 'warm_start']
+
+> handwritten
+False Positives (1):
+	(1) With n_samples=283, test_size=0.9971419365080825 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (0):
+
+> docstring
+False Positives (1):
+	(1) With n_samples=283, test_size=0.9971419365080825 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (0):
+
+> WPanalysis
+False Positives (1):
+	(1) With n_samples=283, test_size=0.9971419365080825 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+freq = 367
+{'description': 'validation_fraction, only used if early_stopping is true',
+ 'anyOf': [{'type': 'object', 'properties': {'validation_fraction': {'enum': [0.1]}}},
+           {'type': 'object', 'properties': {'early_stopping': {'enum': [True]}}}]}
+freq = 240
+{'description': "epsilon, only if loss is 'huber', 'epsilon_insensitive', or 'squared_epsilon_insensitive'",
+ 'anyOf': [{'type': 'object', 'properties': {'epsilon': {'enum': [0.1]}}},
+           {'type': 'object',
+            'properties': {'loss': {'enum': ['huber', 'epsilon_insensitive', 'squared_epsilon_insensitive']}}}]}
+
+WPanalysis:

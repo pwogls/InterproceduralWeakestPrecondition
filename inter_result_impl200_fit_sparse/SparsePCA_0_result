@@ -1,0 +1,45 @@
+>>> SparsePCA  ( transformer )
+1000 trials: 0 passed, 1000 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/0)  |       0        |      1000       |       0        |        0        |    0.0    |  INF   |
+| WPanalysis_(2/47) |       0        |        0        |      1000      |        0        |    INF    |  INF   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 47 total, 2 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['alpha', 'max_iter', 'method', 'n_components', 'tol', 'ridge_alpha', 'n_jobs', 'U_init', 'V_init', 'verbose', 'random_state']
+
+> relevantToOptimizer:
+ None
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (1000):
+	(1000) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (1000):
+	(1000) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:
+freq = 1000
+{'description': "From /utils/validation.py:None:_ensure_sparse_format, Exception: raise TypeError(     'A sparse "
+                'matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy '
+                "array.'     ) ",
+ 'type': 'object',
+ 'not': {}}

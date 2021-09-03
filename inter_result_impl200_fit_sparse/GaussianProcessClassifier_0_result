@@ -1,0 +1,39 @@
+>>> GaussianProcessClassifier  ( classifier )
+1000 trials: 0 passed, 1000 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/0)  |       0        |      1000       |       0        |        0        |    0.0    |  INF   |
+| WPanalysis_(5/77) |       0        |      1000       |       0        |        0        |    0.0    |  INF   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 77 total, 5 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['max_iter_predict', 'multi_class', 'n_restarts_optimizer', 'optimizer', 'kernel', 'warm_start', 'copy_X_train', 'random_state', 'n_jobs']
+
+> relevantToOptimizer:
+ ['optimizer', 'n_restarts_optimizer', 'max_iter_predict', 'multi_class']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (1000):
+	(1000) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+True Negatives (0):
+
+> WPanalysis
+False Positives (1000):
+	(1000) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

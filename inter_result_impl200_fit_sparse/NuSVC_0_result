@@ -1,0 +1,41 @@
+>>> NuSVC  ( classifier )
+1000 trials: 619 passed, 381 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten    |       -        |        -        |       -        |        -        |     -     |   -    |
+| docstrings_(0/1)  |      619       |       381       |       0        |        0        |   0.619   |  1.0   |
+| WPanalysis_(0/64) |      619       |       381       |       0        |        0        |   0.619   |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 64 total, 0 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['break_ties', 'cache_size', 'decision_function_shape', 'degree', 'gamma', 'kernel', 'max_iter', 'probability', 'shrinking', 'tol', 'nu', 'coef0', 'class_weight', 'verbose', 'random_state']
+
+> relevantToOptimizer:
+ ['kernel', 'degree', 'gamma', 'shrinking', 'probability', 'tol', 'cache_size', 'max_iter', 'decision_function_shape', 'break_ties']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (381):
+	(192) break_ties must be False when decision_function_shape is 'ovo'
+	(189) X should be a square kernel matrix
+True Negatives (0):
+
+> WPanalysis
+False Positives (381):
+	(192) break_ties must be False when decision_function_shape is 'ovo'
+	(189) X should be a square kernel matrix
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

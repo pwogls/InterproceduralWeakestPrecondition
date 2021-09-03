@@ -1,0 +1,51 @@
+{'description': 'Feature ranking with recursive feature elimination.',
+ 'allOf': [{'type': 'object',
+            'required': ['estimator', 'n_features_to_select', 'step', 'verbose'],
+            'relevantToOptimizer': [],
+            'additionalProperties': False,
+            'properties': {'estimator': {'description': 'A supervised learning estimator with a fit method that '
+                                                        'provides information about feature importance either through '
+                                                        'a `coef_` attribute or through a `feature_importances_` '
+                                                        'attribute.',
+                                         'laleType': 'operator'},
+                           'n_features_to_select': {'anyOf': [{'description': 'Half of the features are selected.',
+                                                               'enum': [None]},
+                                                              {'description': 'Absolute number of features to select.',
+                                                               'type': 'integer',
+                                                               'minimum': 1,
+                                                               'laleMaximum': 'X/items/maxItems',
+                                                               'forOptimizer': False},
+                                                              {'description': 'Fraction of features to select',
+                                                               'type': 'number',
+                                                               'minimum': 0.0,
+                                                               'exclusiveMinimum': True,
+                                                               'maximum': 1.0,
+                                                               'exclusiveMaximum': True}],
+                                                    'default': None},
+                           'step': {'description': 'If greater than or equal to 1, then step corresponds to the '
+                                                   '(integer) number of features to remove at each iteration. If '
+                                                   'within (0.0, 1.0), then step corresponds to the percentage '
+                                                   '(rounded down) of features to remove at each iteration.',
+                                    'anyOf': [{'type': 'integer', 'minimum': 1, 'forOptimizer': False},
+                                              {'type': 'number',
+                                               'minimum': 0,
+                                               'exclusiveMinimum': True,
+                                               'maximum': 1,
+                                               'exclusiveMaximum': True,
+                                               'maximumForOptimizer': 0.5}],
+                                    'default': 1},
+                           'verbose': {'anyOf': [{'type': 'boolean'}, {'type': 'integer'}],
+                                       'default': 0,
+                                       'description': 'Controls verbosity of output.'},
+                           'importance_getter': {'anyOf': [{'description': 'Use the feature importance either through '
+                                                                           'a `coef_` or `feature_importances_` '
+                                                                           'attributes of estimator.',
+                                                            'enum': ['auto']},
+                                                           {'description': 'Attribute name/path for extracting feature '
+                                                                           'importance (implemented with attrgetter).',
+                                                            'type': 'string'},
+                                                           {'description': 'The callable is passed with the fitted '
+                                                                           'estimator and it should return importance '
+                                                                           'for each feature.',
+                                                            'laleType': 'callable'}],
+                                                 'default': 'auto'}}}]}

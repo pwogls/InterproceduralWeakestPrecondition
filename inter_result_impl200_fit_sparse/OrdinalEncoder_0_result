@@ -1,0 +1,46 @@
+>>> OrdinalEncoder  ( transformer )
+1000 trials: 0 passed, 1000 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0) |       0        |      1000       |       0        |        0        |    0.0    |  INF   |
+| docstrings_(0/0)  |       0        |      1000       |       0        |        0        |    0.0    |  INF   |
+| WPanalysis_(2/35) |       0        |       673       |      327       |        0        |    0.0    |  INF   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 35 total, 2 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['handle_unknown', 'categories', 'dtype', 'encode_unknown_with', 'unknown_value']
+
+> relevantToOptimizer:
+ ['handle_unknown']
+
+> handwritten
+False Positives (1000):
+	(650) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+	(350) unknown_value should be an integer or np.nan when handle_unknown is 'use_encoded_value', got None.
+True Negatives (0):
+
+> docstring
+False Positives (1000):
+	(650) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+	(350) unknown_value should be an integer or np.nan when handle_unknown is 'use_encoded_value', got None.
+True Negatives (0):
+
+> WPanalysis
+False Positives (673):
+	(350) unknown_value should be an integer or np.nan when handle_unknown is 'use_encoded_value', got None.
+	(323) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+True Negatives (327):
+	(327) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:
+freq = 327
+{'enum': ['error', 'use_encoded_value']}

@@ -1,0 +1,18 @@
+[149,
+ 851,
+ ['handwritten', '-', '-', '-', '-', '-', '-'],
+ ['docstrings_(0/0)', 149, 851, 0, 0, 0.149, 1.0],
+ ['WPanalysis_(6/83)', 0, 0, 851, 149, 'INF', 0.0],
+ ['metric', 'shrink_threshold'],
+ {'metric': 0, 'shrink_threshold': 0},
+ {'metric': 0, 'shrink_threshold': 0},
+ {'metric': 0, 'shrink_threshold': 0},
+ [],
+ {},
+ [],
+ {},
+ [{'description': "From /neighbors/_nearest_centroid.py:NearestCentroid:fit, Exception: raise ValueError('threshold "
+                  "shrinking not supported for sparse input') ",
+   'anyOf': [{'type': 'object', 'not': {}},
+             {'type': 'object', 'properties': {'shrink_threshold': {'enum': [False]}}}]}],
+ {'0': 1000}]

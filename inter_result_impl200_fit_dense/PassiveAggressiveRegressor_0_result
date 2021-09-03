@@ -1,0 +1,47 @@
+>>> PassiveAggressiveRegressor  ( regression )
+1000 trials: 492 passed, 508 failed.
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten     |       -        |        -        |       -        |        -        |     -     |   -    |
+|  docstrings_(1/2)  |      492       |       508       |       0        |        0        |   0.492   |  1.0   |
+| WPanalysis_(20/65) |      492       |       508       |       0        |        0        |   0.492   |  1.0   |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 65 total, 20 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['fit_intercept', 'loss', 'max_iter', 'shuffle', 'tol', 'C', 'early_stopping', 'validation_fraction', 'n_iter_no_change', 'verbose', 'epsilon', 'random_state', 'warm_start', 'average']
+
+> relevantToOptimizer:
+ ['fit_intercept', 'max_iter', 'tol', 'shuffle', 'loss']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (508):
+	(508) an integer is required
+True Negatives (0):
+
+> WPanalysis
+False Positives (508):
+	(508) an integer is required
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'fit_intercept': 0, 'loss': 0, 'max_iter': 0, 'shuffle': 0, 'tol': 0, 'C': 0, 'early_stopping': 0, 'validation_fraction': 0, 'n_iter_no_change': 0, 'verbose': 0, 'epsilon': 0, 'random_state': 0, 'warm_start': 0, 'average': 0}
+docstring: 
+ {'fit_intercept': 0, 'loss': 0, 'max_iter': 0, 'shuffle': 0, 'tol': 0, 'C': 0, 'early_stopping': 0, 'validation_fraction': 0, 'n_iter_no_change': 0, 'verbose': 0, 'epsilon': 0, 'random_state': 0, 'warm_start': 0, 'average': 0}
+WPanalysis: 
+ {'fit_intercept': 0, 'loss': 0, 'max_iter': 0, 'shuffle': 0, 'tol': 0, 'C': 0, 'early_stopping': 0, 'validation_fraction': 0, 'n_iter_no_change': 0, 'verbose': 0, 'epsilon': 0, 'random_state': 0, 'warm_start': 0, 'average': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

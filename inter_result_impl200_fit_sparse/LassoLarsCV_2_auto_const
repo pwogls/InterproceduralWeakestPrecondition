@@ -1,0 +1,90 @@
+{'allOf': [{'type': 'object',
+            'required': ['fit_intercept',
+                         'verbose',
+                         'max_iter',
+                         'normalize',
+                         'precompute',
+                         'cv',
+                         'max_n_alphas',
+                         'n_jobs',
+                         'eps',
+                         'copy_X',
+                         'positive'],
+            'relevantToOptimizer': ['fit_intercept',
+                                    'max_iter',
+                                    'normalize',
+                                    'precompute',
+                                    'cv',
+                                    'max_n_alphas',
+                                    'eps',
+                                    'copy_X',
+                                    'positive'],
+            'additionalProperties': False,
+            'properties': {'fit_intercept': {'type': 'boolean',
+                                             'default': True,
+                                             'description': 'whether to calculate the intercept for this model'},
+                           'verbose': {'anyOf': [{'type': 'boolean'}, {'type': 'integer'}],
+                                       'default': False,
+                                       'description': 'Sets the verbosity amount'},
+                           'max_iter': {'type': 'integer',
+                                        'minimumForOptimizer': 10,
+                                        'maximumForOptimizer': 1000,
+                                        'distribution': 'uniform',
+                                        'default': 500,
+                                        'description': 'Maximum number of iterations to perform.'},
+                           'normalize': {'type': 'boolean',
+                                         'default': True,
+                                         'description': 'This parameter is ignored when ``fit_intercept`` is set to '
+                                                        'False'},
+                           'precompute': {'enum': [True, False, 'auto'],
+                                          'default': 'auto',
+                                          'description': 'Whether to use a precomputed Gram matrix to speed up '
+                                                         'calculations'},
+                           'cv': {'description': 'Cross-validation as integer or as object that has a split function.\n'
+                                                 '                        The fit method performs cross validation on '
+                                                 'the input dataset for per\n'
+                                                 '                        trial, and uses the mean cross validation '
+                                                 'performance for optimization.\n'
+                                                 '                        This behavior is also impacted by '
+                                                 'handle_cv_failure flag.\n'
+                                                 '                        If integer: number of folds in '
+                                                 'sklearn.model_selection.StratifiedKFold.\n'
+                                                 '                        If object with split function: generator '
+                                                 'yielding (train, test) splits\n'
+                                                 '                        as arrays of indices. Can use any of the '
+                                                 'iterators from\n'
+                                                 '                        '
+                                                 'https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators.',
+                                  'anyOf': [{'type': 'integer',
+                                             'minimum': 1,
+                                             'default': 5,
+                                             'minimumForOptimizer': 3,
+                                             'maximumForOptimizer': 4,
+                                             'distribution': 'uniform'},
+                                            {'laleType': 'Any', 'forOptimizer': False}]},
+                           'max_n_alphas': {'type': 'integer',
+                                            'minimumForOptimizer': 1000,
+                                            'maximumForOptimizer': 1001,
+                                            'distribution': 'uniform',
+                                            'default': 1000,
+                                            'description': 'The maximum number of points on the path used to compute '
+                                                           'the residuals in the cross-validation'},
+                           'n_jobs': {'anyOf': [{'type': 'integer'}, {'enum': [None]}],
+                                      'default': 1,
+                                      'description': 'Number of CPUs to use during the cross validation'},
+                           'eps': {'type': 'number',
+                                   'minimumForOptimizer': 0.001,
+                                   'maximumForOptimizer': 0.1,
+                                   'distribution': 'loguniform',
+                                   'default': 2.220446049250313e-16,
+                                   'description': 'The machine-precision regularization in the computation of the '
+                                                  'Cholesky diagonal factors'},
+                           'copy_X': {'type': 'boolean',
+                                      'default': True,
+                                      'description': 'If True, X will be copied; else, it may be overwritten.'},
+                           'positive': {'type': 'boolean',
+                                        'default': False,
+                                        'description': 'Restrict coefficients to be >= 0'}}},
+           {'XXX TODO XXX': 'Parameter: precompute > only subsets of x'},
+           {'XXX TODO XXX': 'Parameter: positive > only coefficients up to the smallest alpha value (alphas_[alphas_ > '
+                            '0'}]}

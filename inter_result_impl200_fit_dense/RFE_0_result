@@ -1,0 +1,47 @@
+>>> RFE  ( transformer )
+1000 trials: 878 passed, 122 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0) |      878       |       122       |       0        |        0        |   0.878   |  1.0   |
+|    docstrings     |       -        |        -        |       -        |        -        |     -     |   -    |
+| WPanalysis_(3/69) |      878       |       122       |       0        |        0        |   0.878   |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 69 total, 3 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['estimator', 'importance_getter', 'n_features_to_select', 'step', 'verbose']
+
+> relevantToOptimizer:
+ ['n_features_to_select', 'step']
+
+> handwritten
+False Positives (122):
+	(122) Found array with 0 feature(s) (shape=(52, 0)) while a minimum of 1 is required.
+True Negatives (0):
+
+> docstring
+False Positives (-):
+True Negatives (-):
+
+> WPanalysis
+False Positives (122):
+	(122) Found array with 0 feature(s) (shape=(52, 0)) while a minimum of 1 is required.
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'estimator': 0, 'importance_getter': 0, 'n_features_to_select': 0, 'step': 0, 'verbose': 0}
+docstring: 
+ {'estimator': 0, 'importance_getter': 0, 'n_features_to_select': 0, 'step': 0, 'verbose': 0}
+WPanalysis: 
+ {'estimator': 0, 'importance_getter': 0, 'n_features_to_select': 0, 'step': 0, 'verbose': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

@@ -1,0 +1,40 @@
+>>> Nystroem  ( transformer )
+1000 trials: 771 passed, 229 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+| handwritten_(0/0) |      771       |       229       |       0        |        0        |   0.771   |  1.0   |
+| docstrings_(0/0)  |      771       |       229       |       0        |        0        |   0.771   |  1.0   |
+| WPanalysis_(0/11) |      771       |       229       |       0        |        0        |   0.771   |  1.0   |
++-------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 11 total, 0 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['coef0', 'degree', 'gamma', 'kernel', 'n_components', 'kernel_params', 'random_state', 'n_jobs']
+
+> relevantToOptimizer:
+ ['coef0', 'degree', 'gamma', 'kernel', 'n_components']
+
+> handwritten
+False Positives (229):
+	(229) additive_chi2 does not support sparse matrices.
+True Negatives (0):
+
+> docstring
+False Positives (229):
+	(229) additive_chi2 does not support sparse matrices.
+True Negatives (0):
+
+> WPanalysis
+False Positives (229):
+	(229) additive_chi2 does not support sparse matrices.
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:

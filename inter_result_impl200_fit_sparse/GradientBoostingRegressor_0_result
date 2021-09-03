@@ -1,0 +1,50 @@
+>>> GradientBoostingRegressor  ( regression )
+1000 trials: 997 passed, 3 failed.
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------------------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives |     precision      |       recall       |
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------------------+
+| handwritten_(0/0)  |      997       |        3        |       0        |        0        |       0.997        |        1.0         |
+|  docstrings_(1/3)  |      520       |        1        |       2        |       477       | 0.9980806142034548 | 0.5215646940822467 |
+| WPanalysis_(8/116) |      997       |        3        |       0        |        0        |       0.997        |        1.0         |
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------------------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 116 total, 8 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['alpha', 'criterion', 'learning_rate', 'loss', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'n_estimators', 'n_iter_no_change', 'subsample', 'tol', 'validation_fraction', 'warm_start', 'min_impurity_split', 'init', 'random_state', 'verbose', 'ccp_alpha']
+
+> relevantToOptimizer:
+ ['alpha', 'criterion', 'learning_rate', 'loss', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'n_estimators', 'n_iter_no_change', 'subsample', 'tol', 'validation_fraction', 'warm_start']
+
+> handwritten
+False Positives (3):
+	(1) With n_samples=283, test_size=0.997137380655745 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=283, test_size=0.9967370642152303 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=283, test_size=0.997703983027737 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (0):
+
+> docstring
+False Positives (1):
+	(1) With n_samples=283, test_size=0.9967370642152303 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (2):
+	(1) With n_samples=283, test_size=0.997137380655745 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=283, test_size=0.997703983027737 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+> WPanalysis
+False Positives (3):
+	(1) With n_samples=283, test_size=0.997137380655745 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=283, test_size=0.9967370642152303 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+	(1) With n_samples=283, test_size=0.997703983027737 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+True Negatives (0):
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+freq = 479
+{'description': "alpha, only if loss='huber' or loss='quantile'",
+ 'anyOf': [{'type': 'object', 'properties': {'alpha': {'enum': [0.9]}}},
+           {'type': 'object', 'properties': {'loss': {'enum': ['huber', 'quantile']}}}]}
+
+WPanalysis:

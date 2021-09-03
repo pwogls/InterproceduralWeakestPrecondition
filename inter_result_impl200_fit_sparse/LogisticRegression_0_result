@@ -1,0 +1,135 @@
+>>> LogisticRegression  ( classifier )
+1000 trials: 297 passed, 703 failed.
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives |     precision      | recall |
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------+
+| handwritten_(3/3)  |      297       |       49        |      654       |        0        | 0.8583815028901735 |  1.0   |
+|  docstrings_(1/5)  |      297       |       703       |       0        |        0        |       0.297        |  1.0   |
+| WPanalysis_(16/74) |      297       |        0        |      703       |        0        |        1.0         |  1.0   |
++--------------------+----------------+-----------------+----------------+-----------------+--------------------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 74 total, 16 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['C', 'dual', 'fit_intercept', 'intercept_scaling', 'l1_ratio', 'max_iter', 'multi_class', 'penalty', 'solver', 'tol', 'warm_start', 'class_weight', 'random_state', 'verbose', 'n_jobs']
+
+> relevantToOptimizer:
+ ['C', 'dual', 'fit_intercept', 'intercept_scaling', 'max_iter', 'multi_class', 'penalty', 'solver', 'tol', 'warm_start', 'l1_ratio']
+
+> handwritten
+False Positives (49):
+	(20) Only 'saga' solver supports elasticnet penalty, got solver=liblinear.
+	(15) penalty='none' is not supported for the liblinear solver
+	(14) l1_ratio must be between 0 and 1; got (l1_ratio=None)
+True Negatives (654):
+	(102) Solver saga supports only dual=False, got dual=True
+	(57) Solver sag supports only 'l2' or 'none' penalties, got l1 penalty.
+	(55) Solver sag supports only dual=False, got dual=True
+	(53) Solver lbfgs supports only dual=False, got dual=True
+	(49) Solver newton-cg supports only 'l2' or 'none' penalties, got elasticnet penalty.
+	(48) Solver lbfgs supports only 'l2' or 'none' penalties, got l1 penalty.
+	(44) Solver newton-cg supports only dual=False, got dual=True
+	(44) Solver newton-cg supports only 'l2' or 'none' penalties, got l1 penalty.
+	(42) Solver lbfgs supports only 'l2' or 'none' penalties, got elasticnet penalty.
+	(40) Solver liblinear does not support a multinomial backend.
+	(38) penalty='none' is not supported for the liblinear solver
+	(38) Solver sag supports only 'l2' or 'none' penalties, got elasticnet penalty.
+	(25) Only 'saga' solver supports elasticnet penalty, got solver=liblinear.
+	(19) Unsupported set of arguments: The combination of penalty='l1' and loss='logistic_regression' are not supported when dual=True, Parameters: penalty='l1', loss='logistic_regression', dual=True
+
+> docstring
+False Positives (703):
+	(102) Solver saga supports only dual=False, got dual=True
+	(57) Solver sag supports only 'l2' or 'none' penalties, got l1 penalty.
+	(55) Solver sag supports only dual=False, got dual=True
+	(53) penalty='none' is not supported for the liblinear solver
+	(53) Solver lbfgs supports only dual=False, got dual=True
+	(49) Solver newton-cg supports only 'l2' or 'none' penalties, got elasticnet penalty.
+	(48) Solver lbfgs supports only 'l2' or 'none' penalties, got l1 penalty.
+	(45) Only 'saga' solver supports elasticnet penalty, got solver=liblinear.
+	(44) Solver newton-cg supports only dual=False, got dual=True
+	(44) Solver newton-cg supports only 'l2' or 'none' penalties, got l1 penalty.
+	(42) Solver lbfgs supports only 'l2' or 'none' penalties, got elasticnet penalty.
+	(40) Solver liblinear does not support a multinomial backend.
+	(38) Solver sag supports only 'l2' or 'none' penalties, got elasticnet penalty.
+	(19) Unsupported set of arguments: The combination of penalty='l1' and loss='logistic_regression' are not supported when dual=True, Parameters: penalty='l1', loss='logistic_regression', dual=True
+	(14) l1_ratio must be between 0 and 1; got (l1_ratio=None)
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (703):
+	(102) Solver saga supports only dual=False, got dual=True
+	(57) Solver sag supports only 'l2' or 'none' penalties, got l1 penalty.
+	(55) Solver sag supports only dual=False, got dual=True
+	(53) penalty='none' is not supported for the liblinear solver
+	(53) Solver lbfgs supports only dual=False, got dual=True
+	(49) Solver newton-cg supports only 'l2' or 'none' penalties, got elasticnet penalty.
+	(48) Solver lbfgs supports only 'l2' or 'none' penalties, got l1 penalty.
+	(45) Only 'saga' solver supports elasticnet penalty, got solver=liblinear.
+	(44) Solver newton-cg supports only dual=False, got dual=True
+	(44) Solver newton-cg supports only 'l2' or 'none' penalties, got l1 penalty.
+	(42) Solver lbfgs supports only 'l2' or 'none' penalties, got elasticnet penalty.
+	(40) Solver liblinear does not support a multinomial backend.
+	(38) Solver sag supports only 'l2' or 'none' penalties, got elasticnet penalty.
+	(19) Unsupported set of arguments: The combination of penalty='l1' and loss='logistic_regression' are not supported when dual=True, Parameters: penalty='l1', loss='logistic_regression', dual=True
+	(14) l1_ratio must be between 0 and 1; got (l1_ratio=None)
+
+> Failed constraints stats:
+handwritten:
+freq = 330
+{'description': 'The dual formulation is only implemented for l2 penalty with the liblinear solver.',
+ 'anyOf': [{'type': 'object', 'properties': {'dual': {'enum': [False]}}},
+           {'type': 'object', 'properties': {'penalty': {'enum': ['l2']}, 'solver': {'enum': ['liblinear']}}}]}
+freq = 278
+{'description': 'The newton-cg, sag, and lbfgs solvers support only l2 or no penalties.',
+ 'anyOf': [{'type': 'object', 'properties': {'solver': {'not': {'enum': ['newton-cg', 'sag', 'lbfgs']}}}},
+           {'type': 'object', 'properties': {'penalty': {'enum': ['l2', 'none']}}}]}
+freq = 46
+{'description': 'The multi_class multinomial option is unavailable when the solver is liblinear.',
+ 'anyOf': [{'type': 'object', 'properties': {'multi_class': {'not': {'enum': ['multinomial']}}}},
+           {'type': 'object', 'properties': {'solver': {'not': {'enum': ['liblinear']}}}}]}
+
+docstring:
+
+WPanalysis:
+freq = 254
+{'description': "From /linear_model/_logistic.py:None:_check_solver, Exception: raise ValueError('Solver %s supports "
+                "only dual=False, got dual=%s' % (     solver, dual)) ",
+ 'anyOf': [{'type': 'object', 'properties': {'solver': {'enum': ['liblinear']}}},
+           {'type': 'object', 'properties': {'dual': {'enum': [False]}}}]}
+freq = 278
+{'description': 'From /linear_model/_logistic.py:None:_check_solver, Exception: raise ValueError(     "Solver %s '
+                'supports only \'l2\' or \'none\' penalties, got %s penalty." % (     solver, penalty)) ',
+ 'anyOf': [{'type': 'object', 'properties': {'solver': {'enum': ['liblinear', 'saga']}}},
+           {'type': 'object', 'properties': {'penalty': {'enum': ['l2', 'none']}}}]}
+freq = 53
+{'description': 'From /linear_model/_logistic.py:None:_check_solver, Exception: raise ValueError("penalty=\'none\' is '
+                'not supported for the liblinear solver") ',
+ 'anyOf': [{'type': 'object', 'properties': {'solver': {'not': {'enum': ['liblinear']}}}},
+           {'type': 'object', 'properties': {'penalty': {'not': {'enum': ['none']}}}}]}
+freq = 45
+{'description': 'From /linear_model/_logistic.py:None:_check_solver, Exception: raise ValueError(     "Only \'saga\' '
+                'solver supports elasticnet penalty, got solver={}.".format     (solver)) ',
+ 'anyOf': [{'type': 'object', 'properties': {'penalty': {'not': {'enum': ['elasticnet']}}}},
+           {'type': 'object', 'properties': {'solver': {'enum': ['saga']}}}]}
+freq = 40
+{'anyOf': [{'type': 'object', 'properties': {'multi_class': {'enum': ['auto']}}},
+           {'type': 'object', 'properties': {'multi_class': {'not': {'enum': ['multinomial']}}}},
+           {'type': 'object', 'properties': {'solver': {'not': {'enum': ['liblinear']}}}}]}
+freq = 19
+{'description': "From /svm/_base.py:None:_get_liblinear_solver_type, Exception: raise ValueError(     'Unsupported set "
+                "of arguments: %s, Parameters: penalty=%r, loss=%r, dual=%r'      % (error_string, penalty, loss, "
+                'dual)) ',
+ 'anyOf': [{'type': 'object', 'properties': {'solver': {'not': {'enum': ['liblinear']}}}},
+           {'allOf': [{'type': 'object', 'properties': {'penalty': {'enum': ['l1']}}},
+                      {'type': 'object', 'properties': {'dual': {'enum': [False]}}}]},
+           {'type': 'object', 'properties': {'penalty': {'enum': ['l2']}}}]}
+freq = 14
+{'description': "From /linear_model/_logistic.py:LogisticRegression:fit, Exception: raise ValueError('l1_ratio must be "
+                "between 0 and 1; got (l1_ratio=%r)' %     self.l1_ratio) ",
+ 'anyOf': [{'type': 'object', 'properties': {'penalty': {'not': {'enum': ['elasticnet']}}}},
+           {'allOf': [{'type': 'object', 'properties': {'l1_ratio': {'type': 'number'}}},
+                      {'type': 'object', 'properties': {'l1_ratio': {'type': 'number', 'minimum': 0}}},
+                      {'type': 'object', 'properties': {'l1_ratio': {'type': 'number', 'maximum': 1}}}]}]}

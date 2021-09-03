@@ -1,0 +1,10 @@
+[{'base_estimator': LinearSVC(random_state=0), 'cv': 4, 'ensemble': False, 'method': 'sigmoid', 'n_jobs': None},
+ {'base_estimator': LinearSVC(random_state=0), 'cv': 'prefit', 'ensemble': True, 'method': 'sigmoid', 'n_jobs': None},
+ {'base_estimator': LinearSVC(random_state=0), 'cv': 'prefit', 'ensemble': False, 'method': 'isotonic', 'n_jobs': None},
+ {'base_estimator': LinearSVC(random_state=0), 'cv': 'prefit', 'ensemble': True, 'method': 'sigmoid', 'n_jobs': None},
+ {'base_estimator': LinearSVC(random_state=0), 'cv': 3, 'ensemble': False, 'method': 'isotonic', 'n_jobs': None},
+ {'base_estimator': LinearSVC(random_state=0), 'cv': 3, 'ensemble': True, 'method': 'isotonic', 'n_jobs': None},
+ {'base_estimator': LinearSVC(random_state=0), 'cv': 'prefit', 'ensemble': True, 'method': 'isotonic', 'n_jobs': None},
+ {'base_estimator': LinearSVC(random_state=0), 'cv': None, 'ensemble': False, 'method': 'sigmoid', 'n_jobs': None},
+ {'base_estimator': LinearSVC(random_state=0), 'cv': None, 'ensemble': False, 'method': 'isotonic', 'n_jobs': None},
+ {'base_estimator': LinearSVC(random_state=0), 'cv': None, 'ensemble': True, 'method': 'sigmoid', 'n_jobs': None}]

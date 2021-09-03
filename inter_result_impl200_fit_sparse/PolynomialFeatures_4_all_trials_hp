@@ -1,0 +1,10 @@
+[{'degree': 3, 'include_bias': True, 'interaction_only': True, 'order': 'C'},
+ {'degree': 3, 'include_bias': True, 'interaction_only': False, 'order': 'C'},
+ {'degree': 3, 'include_bias': False, 'interaction_only': False, 'order': 'C'},
+ {'degree': 3, 'include_bias': True, 'interaction_only': False, 'order': 'C'},
+ {'degree': 2, 'include_bias': False, 'interaction_only': True, 'order': 'C'},
+ {'degree': 2, 'include_bias': False, 'interaction_only': True, 'order': 'C'},
+ {'degree': 3, 'include_bias': False, 'interaction_only': False, 'order': 'C'},
+ {'degree': 3, 'include_bias': True, 'interaction_only': False, 'order': 'C'},
+ {'degree': 3, 'include_bias': False, 'interaction_only': False, 'order': 'C'},
+ {'degree': 3, 'include_bias': True, 'interaction_only': False, 'order': 'C'}]

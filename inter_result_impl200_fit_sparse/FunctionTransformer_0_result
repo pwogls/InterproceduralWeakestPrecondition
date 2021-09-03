@@ -1,0 +1,51 @@
+>>> FunctionTransformer  ( transformer )
+1000 trials: 767 passed, 233 failed.
++-------------------+----------------+-----------------+----------------+-----------------+-------------------+--------------------+
+|       name        | true_positives | false_positives | true_negatives | false_negatives |     precision     |       recall       |
++-------------------+----------------+-----------------+----------------+-----------------+-------------------+--------------------+
+| handwritten_(1/1) |      490       |       233       |       0        |       277       | 0.677731673582296 | 0.6388526727509778 |
+| docstrings_(0/0)  |      767       |       233       |       0        |        0        |       0.767       |        1.0         |
+| WPanalysis_(3/36) |      767       |        0        |      233       |        0        |        1.0        |        1.0         |
++-------------------+----------------+-----------------+----------------+-----------------+-------------------+--------------------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 36 total, 3 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['accept_sparse', 'check_inverse', 'validate', 'func', 'inverse_func', 'kw_args', 'inv_kw_args']
+
+> relevantToOptimizer:
+ ['accept_sparse', 'check_inverse', 'pass_y', 'validate']
+
+> handwritten
+False Positives (233):
+	(233) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+True Negatives (0):
+
+> docstring
+False Positives (233):
+	(233) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (233):
+	(233) A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+
+> Failed constraints stats:
+handwritten:
+freq = 277
+{'description': 'If validate is False, then accept_sparse has no effect.',
+ 'anyOf': [{'type': 'object', 'properties': {'validate': {'not': {'enum': [False]}}}},
+           {'type': 'object', 'properties': {'accept_sparse': {'enum': [False]}}}]}
+
+docstring:
+
+WPanalysis:
+freq = 233
+{'description': "From /utils/validation.py:None:_ensure_sparse_format, Exception: raise TypeError(     'A sparse "
+                'matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy '
+                "array.'     ) ",
+ 'anyOf': [{'type': 'object', 'properties': {'validate': {'enum': [False]}}},
+           {'type': 'object', 'not': {}},
+           {'type': 'object', 'properties': {'accept_sparse': {'not': {'enum': [False]}}}}]}

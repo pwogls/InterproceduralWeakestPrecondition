@@ -1,0 +1,14 @@
+{'allOf': [{'type': 'object',
+            'required': ['priors'],
+            'relevantToOptimizer': ['var_smoothing'],
+            'additionalProperties': False,
+            'properties': {'priors': {'anyOf': [{'type': 'array', 'items': {'type': 'number'}}, {'enum': [None]}],
+                                      'default': None,
+                                      'description': 'Prior probabilities of the classes. If specified the priors are '
+                                                     'not'},
+                           'var_smoothing': {'type': 'number',
+                                             'minimumForOptimizer': 0.0,
+                                             'maximumForOptimizer': 1.0,
+                                             'default': 1e-09,
+                                             'description': 'Portion of the largest variance of all features that is '
+                                                            'added to variances for calculation stability.'}}}]}

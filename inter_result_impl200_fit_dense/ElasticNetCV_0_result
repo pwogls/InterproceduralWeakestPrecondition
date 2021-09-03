@@ -1,0 +1,45 @@
+>>> ElasticNetCV  ( regression )
+1000 trials: 1000 passed, 0 failed.
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|        name        | true_positives | false_positives | true_negatives | false_negatives | precision | recall |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+|    handwritten     |       -        |        -        |       -        |        -        |     -     |   -    |
+|  docstrings_(0/0)  |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
+| WPanalysis_(2/131) |      1000      |        0        |       0        |        0        |    1.0    |  1.0   |
++--------------------+----------------+-----------------+----------------+-----------------+-----------+--------+
+Note:
+	handwritten_(A/B) means there are B total constraints, A of which are good constraints (no TODO).
+	WP aboved are interesting wp, ie. 2+ hp or 1 + X/y. For overall WP, there are 131 total, 2 are good. All WP constraints are at /output/JSS_all_exceptions/
+
+> Hyperparams: 
+ ['copy_X', 'cv', 'eps', 'fit_intercept', 'l1_ratio', 'max_iter', 'n_alphas', 'normalize', 'positive', 'precompute', 'selection', 'tol', 'alphas', 'verbose', 'n_jobs', 'random_state']
+
+> relevantToOptimizer:
+ ['l1_ratio', 'eps', 'n_alphas', 'alpha', 'fit_intercept', 'normalize', 'precompute', 'max_iter', 'tol', 'cv', 'copy_X', 'positive', 'selection']
+
+> handwritten
+False Positives (-):
+True Negatives (-):
+
+> docstring
+False Positives (0):
+True Negatives (0):
+
+> WPanalysis
+False Positives (0):
+True Negatives (0):
+
+> # of time they appear in failed validations:
+handwritten: 
+ {'copy_X': 0, 'cv': 0, 'eps': 0, 'fit_intercept': 0, 'l1_ratio': 0, 'max_iter': 0, 'n_alphas': 0, 'normalize': 0, 'positive': 0, 'precompute': 0, 'selection': 0, 'tol': 0, 'alphas': 0, 'verbose': 0, 'n_jobs': 0, 'random_state': 0}
+docstring: 
+ {'copy_X': 0, 'cv': 0, 'eps': 0, 'fit_intercept': 0, 'l1_ratio': 0, 'max_iter': 0, 'n_alphas': 0, 'normalize': 0, 'positive': 0, 'precompute': 0, 'selection': 0, 'tol': 0, 'alphas': 0, 'verbose': 0, 'n_jobs': 0, 'random_state': 0}
+WPanalysis: 
+ {'copy_X': 0, 'cv': 0, 'eps': 0, 'fit_intercept': 0, 'l1_ratio': 0, 'max_iter': 0, 'n_alphas': 0, 'normalize': 0, 'positive': 0, 'precompute': 0, 'selection': 0, 'tol': 0, 'alphas': 0, 'verbose': 0, 'n_jobs': 0, 'random_state': 0}
+
+> Failed constraints stats:
+handwritten:
+
+docstring:
+
+WPanalysis:
